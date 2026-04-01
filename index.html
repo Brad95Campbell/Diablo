@@ -275,6 +275,103 @@ header{display:flex;align-items:center;justify-content:space-between;padding:36p
 /* Responsive */
 @media(max-width:900px){.builds-grid{grid-template-columns:1fr}.ov-grid,.stats-grid,.proscons-grid{grid-template-columns:1fr}.hdr-right{display:none}}
 @media(max-width:600px){.dp-body{padding:16px}.ratings-4{grid-template-columns:repeat(2,1fr)}}
+
+/* ── SKILL TREE TAB ── */
+.skilltree-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.st-section-hd{font-family:var(--font-d);font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.skill-tree-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:2px;overflow:hidden}
+.st-row{display:grid;grid-template-columns:36px 1fr auto;gap:0;border-bottom:1px solid var(--border);align-items:start}
+.st-row:last-child{border-bottom:none}
+.st-row:hover .st-cell{background:var(--glow)}
+.st-cell{padding:10px 12px;border-right:1px solid var(--border)}
+.st-cell:last-child{border-right:none}
+.st-rank{font-family:var(--font-d);font-size:0.75rem;color:var(--gold2);text-align:center;padding-top:11px}
+.st-name{font-size:0.875rem;font-weight:600;color:var(--text);margin-bottom:2px}
+.st-type{font-size:0.65rem;font-family:var(--font-d);letter-spacing:0.1em;text-transform:uppercase}
+.stt-Core{color:#e07070}.stt-Passive{color:#7db87d}.stt-Ultimate{color:#b07ee0}.stt-Basic{color:var(--gold2)}.stt-Utility{color:#d4883a}
+.st-desc{font-size:0.8rem;color:var(--text2);line-height:1.45;padding-top:1px}
+.st-pts{font-size:0.7rem;color:var(--text3);white-space:nowrap;padding-top:11px;min-width:44px;text-align:right}
+.keystones-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.keystone-card{background:var(--bg3);border:1px solid rgba(120,60,180,0.3);border-radius:2px;padding:12px 14px}
+.keystone-name{font-family:var(--font-d);font-size:0.8rem;color:#b07ee0;margin-bottom:5px;letter-spacing:0.03em}
+.keystone-desc{font-size:0.8rem;color:var(--text2);line-height:1.5}
+.oath-card{background:rgba(201,149,42,0.06);border:1px solid var(--border2);border-radius:2px;padding:14px 16px;margin-bottom:16px}
+.oath-name{font-family:var(--font-d);font-size:0.85rem;color:var(--gold2);margin-bottom:6px;letter-spacing:0.04em}
+.oath-desc{font-size:0.875rem;color:var(--text2);line-height:1.55}
+
+/* ── PARAGON TAB ── */
+.paragon-boards{display:flex;flex-direction:column;gap:14px}
+.pg-board{background:var(--bg2);border:1px solid var(--border);border-radius:2px;overflow:hidden}
+.pg-board.pg-primary{border-color:var(--gold-dim)}
+.pg-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border);background:var(--bg3);gap:12px;flex-wrap:wrap}
+.pg-board-name{font-family:var(--font-d);font-size:0.88rem;color:var(--text);letter-spacing:0.04em}
+.pg-board-num{font-size:0.65rem;font-family:var(--font-d);letter-spacing:0.1em;text-transform:uppercase;color:var(--text3)}
+.pg-legend-node{font-size:0.6rem;padding:2px 8px;border-radius:1px;font-family:var(--font-d);letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap}
+.pgn-primary{background:rgba(139,32,32,0.2);color:#e07070;border:1px solid rgba(139,32,32,0.3)}
+.pgn-secondary{background:rgba(201,149,42,0.12);color:var(--gold2);border:1px solid var(--border)}
+.pg-body{padding:14px 16px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pg-col-hd{font-family:var(--font-d);font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text3);margin-bottom:8px}
+.glyph-list{display:flex;flex-direction:column;gap:8px}
+.glyph-card{background:var(--bg3);border:1px solid var(--border);border-radius:2px;padding:10px 12px}
+.glyph-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:4px}
+.glyph-name{font-family:var(--font-d);font-size:0.8rem;color:var(--gold2);letter-spacing:0.03em}
+.glyph-lvl{font-size:0.6rem;font-family:var(--font-d);color:var(--text3);white-space:nowrap;padding:1px 6px;border:1px solid var(--border);border-radius:1px;letter-spacing:0.08em}
+.glyph-desc{font-size:0.78rem;color:var(--text2);line-height:1.45}
+.node-list{display:flex;flex-direction:column;gap:4px}
+.node-row{display:flex;gap:8px;align-items:baseline;padding:5px 0;border-bottom:1px solid var(--border);font-size:0.82rem}
+.node-row:last-child{border-bottom:none}
+.node-name{color:var(--text);font-weight:600;min-width:100px}
+.node-type{font-size:0.6rem;font-family:var(--font-d);letter-spacing:0.08em;text-transform:uppercase;padding:1px 6px;border-radius:1px;white-space:nowrap}
+.nt-Legendary{background:rgba(180,100,30,0.15);color:#d4883a;border:1px solid rgba(180,100,30,0.25)}
+.nt-Rare{background:rgba(201,149,42,0.12);color:var(--gold2);border:1px solid var(--border)}
+.nt-Magic{background:rgba(60,100,200,0.12);color:#7aaee0;border:1px solid rgba(60,100,200,0.2)}
+.node-desc{color:var(--text2);flex:1}
+.pg-note{font-size:0.8rem;color:var(--text3);font-style:italic;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);grid-column:1/-1}
+
+/* ── GEAR SLOT DISPLAY (screenshot style) ── */
+.gear-slots-list{display:flex;flex-direction:column;gap:18px}
+.gear-slot-block{background:var(--bg3);border:1px solid var(--border);border-radius:2px;overflow:hidden}
+.gear-slot-header{display:flex;align-items:center;gap:10px;padding:9px 14px;background:var(--bg4);border-bottom:1px solid var(--border)}
+.gear-slot-icon{width:28px;height:28px;background:var(--bg3);border:1px solid var(--border);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.gear-slot-icon svg{width:14px;height:14px;fill:var(--text3)}
+.gear-slot-label{font-family:var(--font-d);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text3)}
+.gear-slot-aspect{font-size:0.82rem;font-weight:600;color:var(--gold2);margin-left:auto;font-family:var(--font-b)}
+.gear-slot-body{padding:8px 14px 10px}
+.gear-affix-list{list-style:none;margin:0;padding:0}
+.gear-affix-item{display:flex;align-items:baseline;gap:7px;padding:4px 0;border-bottom:0.5px solid var(--border);font-size:0.84rem;line-height:1.4}
+.gear-affix-item:last-child{border-bottom:none}
+.gear-affix-num{font-size:0.68rem;color:var(--text3);min-width:14px;font-family:var(--font-b);flex-shrink:0}
+.gear-affix-name{color:var(--text);flex:1}
+.gear-affix-name.temper{color:#c9952a}
+.gear-affix-name.seasonal{color:#d4883a}
+.gear-affix-arrow{font-size:0.7rem;color:var(--green2);margin-left:2px}
+.gear-affix-tag{font-size:0.58rem;font-family:var(--font-d);letter-spacing:0.08em;text-transform:uppercase;padding:1px 6px;border-radius:1px;white-space:nowrap;margin-left:4px}
+.gat-temper{background:rgba(201,149,42,0.15);color:var(--gold2);border:1px solid var(--border)}
+.gat-seasonal{background:rgba(180,100,30,0.15);color:#d4883a;border:1px solid rgba(180,100,30,0.25)}
+.gear-slots-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.gear-slots-grid{grid-template-columns:1fr}}
+
+/* ── SLOT GEAR CARDS ── */
+.slot-gear-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(252px,1fr));gap:10px}
+.slot-item-card{background:var(--bg3);border:1px solid var(--border);border-radius:2px;overflow:hidden;transition:border-color .15s}
+.slot-item-card:hover{border-color:var(--border2)}
+.slot-item-card.slot-unique{border-left:3px solid var(--gold-dim)}
+.slot-item-card.slot-mythic{border-left:3px solid rgba(120,60,180,0.6)}
+.slot-item-header{display:flex;align-items:center;gap:10px;padding:10px 12px 8px;border-bottom:1px solid var(--border)}
+.slot-icon{width:32px;height:32px;background:var(--bg4);border:1px solid var(--border);border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:0.5rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.03em;flex-shrink:0;text-align:center;line-height:1.2;padding:2px}
+.slot-header-info{flex:1;min-width:0}
+.slot-label{font-size:0.62rem;color:var(--text3);font-family:var(--font-d);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:2px}
+.slot-aspect-name{font-size:0.85rem;font-weight:600;color:var(--text);line-height:1.2;margin-bottom:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.slot-aspect-type{font-size:0.55rem;font-family:var(--font-d);letter-spacing:0.1em;text-transform:uppercase;padding:1px 6px;border-radius:1px}
+.sat-Unique{background:rgba(201,149,42,0.15);color:var(--gold2);border:1px solid var(--border)}
+.sat-Legendary{background:rgba(180,100,30,0.12);color:#d4883a;border:1px solid rgba(180,100,30,0.2)}
+.sat-Mythic{background:rgba(120,60,180,0.18);color:#b07ee0;border:1px solid rgba(120,60,180,0.3)}
+.slot-affixes{padding:7px 12px 9px}
+.slot-affix-row{display:flex;align-items:baseline;gap:7px;padding:2px 0;font-size:0.82rem;line-height:1.45}
+.slot-affix-num{font-size:0.7rem;color:var(--text3);min-width:14px;flex-shrink:0}
+.slot-affix-name{color:var(--text2);flex:1}
+.slot-affix-row.slot-temper .slot-temper-icon{font-size:0.62rem;color:var(--gold);min-width:14px;flex-shrink:0;line-height:1.6}
+.slot-affix-row.slot-temper .temper-name{color:var(--gold2)}
 </style>
 </head>
 <body>
@@ -290,26 +387,6 @@ header{display:flex;align-items:center;justify-content:space-between;padding:36p
     <div class="hdr-stat"><div class="hdr-num" id="hdr-sources">2</div><div class="hdr-lbl">Sources</div></div>
   </div>
 </header>
-
-<div class="toolbar">
-  <div class="search-wrap">
-    <span class="search-icon">⌕</span>
-    <input class="search-input" id="search" placeholder="Search builds, skills, playstyle…" oninput="applyFilters()">
-  </div>
-  <button class="filter-btn active" data-source="" onclick="setSource(this,'')">All</button>
-  <button class="filter-btn" data-source="Maxroll" onclick="setSource(this,'Maxroll')">Maxroll</button>
-  <button class="filter-btn" data-source="Icy Veins" onclick="setSource(this,'Icy Veins')">Icy Veins</button>
-  <select class="sort-select" id="sort" onchange="applyFilters()">
-    <option value="tier">Sort by tier</option>
-    <option value="name">Name A–Z</option>
-    <option value="speed">Speed</option>
-    <option value="aoe">AoE</option>
-    <option value="boss">Boss</option>
-  </select>
-  <span class="result-count" id="result-count"></span>
-</div>
-
-<div class="tag-row" id="tag-row"></div>
 
 <div class="builds-grid" id="builds-grid"></div>
 
@@ -1159,53 +1236,14 @@ const BUILDS = [
   }
 ];
 
-let activeSource = '';
-let activeTags = new Set();
-let activeSort = 'tier';
 let selectedId = null;
 
 const TIER_ORDER = {S:0,A:1,B:2,C:3};
 function tierVal(b){ return TIER_ORDER[b.tier] ?? 4; }
 function ratingNum(r){ return r ? parseInt(r) : 0; }
 
-const ALL_TAGS = [...new Set(BUILDS.flatMap(b => b.tags))].sort();
-
-function setSource(btn, src) {
-  activeSource = src;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  applyFilters();
-}
-
-function toggleTag(tag) {
-  if (activeTags.has(tag)) activeTags.delete(tag);
-  else activeTags.add(tag);
-  document.querySelectorAll('.tag-filter').forEach(el => {
-    el.classList.toggle('active', activeTags.has(el.dataset.tag));
-  });
-  applyFilters();
-}
-
 function applyFilters() {
-  const q = (document.getElementById('search').value || '').toLowerCase();
-  activeSort = document.getElementById('sort').value;
-  let filtered = BUILDS.filter(b => {
-    if (activeSource && b.source !== activeSource) return false;
-    if (activeTags.size > 0 && ![...activeTags].every(t => b.tags.includes(t))) return false;
-    if (q) {
-      const haystack = [b.name, b.source, b.playstyle, ...b.tags, ...b.skills.map(s=>s.name)].join(' ').toLowerCase();
-      if (!haystack.includes(q)) return false;
-    }
-    return true;
-  });
-  filtered.sort((a,b) => {
-    if (activeSort==='tier') return tierVal(a)-tierVal(b);
-    if (activeSort==='name') return a.name.localeCompare(b.name);
-    if (activeSort==='speed') return ratingNum(b.ratings.speed)-ratingNum(a.ratings.speed);
-    if (activeSort==='aoe') return ratingNum(b.ratings.aoe)-ratingNum(a.ratings.aoe);
-    if (activeSort==='boss') return ratingNum(b.ratings.boss)-ratingNum(a.ratings.boss);
-    return 0;
-  });
+  const filtered = [...BUILDS].sort((a,b) => tierVal(a)-tierVal(b));
   renderGrid(filtered);
 }
 
@@ -1221,15 +1259,9 @@ function tagClass(tag) {
 
 function renderGrid(builds) {
   const grid = document.getElementById('builds-grid');
-  document.getElementById('result-count').textContent = builds.length + ' of ' + BUILDS.length + ' builds';
-  document.getElementById('hdr-total').textContent = BUILDS.length;
+  const hdrTotal = document.getElementById('hdr-total');
+  if (hdrTotal) hdrTotal.textContent = BUILDS.length;
 
-  if (!builds.length) {
-    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:48px;border:1px dashed var(--border);border-radius:2px;color:var(--text3);font-style:italic;">No builds match your filters.</div>';
-    return;
-  }
-
-  // Inject selected build detail after its card
   let html = '';
   builds.forEach(b => {
     const isSelected = selectedId === b.id;
@@ -1717,9 +1749,956 @@ function renderGearTab(b) {
     </div>`;
 }
 
-function renderDetail(b) {
-  const tabs = ['overview','skills','gear','stats','variants'];
+// ── SKILL TREE, PARAGON & AFFIX DATA ──
+const EXTRA_DATA = {
+"judgement-maxroll":{
+  oath:{name:"Judicator Oath",desc:"Basic Skills automatically apply Judgement marks to enemies. Judicator Core Skills detonate these marks early for AoE Holy explosions. Each Judgement mark increases your damage to that enemy. Non-negotiable for this build — all key Unique items and Aspects are tuned for Judicator."},
+  skillTree:[
+    {name:"Blessed Hammer",type:"Core",rank:"5/5",desc:"Primary damage delivery. Spiraling hammers detonate Judgement marks on everything they pass through."},
+    {name:"Arbiter of Justice",type:"Ultimate",rank:"1/1",desc:"Transformation into Arbiter form — Wing Strikes passively apply Judgement. Recast on cooldown."},
+    {name:"Spear of the Heavens",type:"Core",rank:"1/5",desc:"Each Spear is a permanent Judgement vessel. Note: extra ranks do NOT boost Judgement damage."},
+    {name:"Consecration",type:"Utility",rank:"1/5",desc:"Area damage amp and self-healing. Keep active during tough encounters."},
+    {name:"Defiance Aura",type:"Utility",rank:"1/5",desc:"Unstoppable on demand. Passive armor bonus always active."},
+    {name:"Rally",type:"Basic",rank:"1/5",desc:"Faith restoration and movement speed. Cast frequently."},
+    {name:"Proselytizing",type:"Passive",rank:"3/3",desc:"Increases Judicator-tagged damage — essential multiplier for this build."},
+    {name:"Judgement Day",type:"Passive",rank:"1/1",desc:"KEYSTONE — Exploding enemies spread Judgement marks to unmarked targets. The source of infinite chain reactions."},
+    {name:"The Best Offense",type:"Passive",rank:"3/3",desc:"Fortify grants increased damage — keep Fortify active at all times."},
+    {name:"Light's Mending",type:"Passive",rank:"3/3",desc:"Consuming Judgement heals you — built-in sustain from your core mechanic."}
+  ],
+  keystones:[
+    {name:"Judgement Day",desc:"When a Judgement explodes, all enemies within range that are not already marked become marked. This is the engine that turns single detonations into screen-clearing chain reactions."},
+    {name:"Watkins' Law",desc:"Blessed Hammer hits apply the Judicator damage bonus to both the hit that applies Judgement AND the explosion itself. Essential for maximizing Hammer damage."}
+  ],
+  paragonBoards:[
+    {name:"Starting Board",order:1,primary:true,legendaryNode:{name:"Castle",type:"Legendary",desc:"Grants 125% of Damage Reduction from Armor as bonus damage. Stack Armor on all gear — each point of Armor translates directly to more damage."},glyphs:[{name:"Exploit",lvlReq:15,desc:"Increases damage to Vulnerable enemies. Works with Watkins' Law Judgement explosions."},{name:"Territorial",lvlReq:15,desc:"Bonus damage to Close enemies — Blessed Hammer is close-range."}],keyNodes:[{name:"Strength nodes",type:"Rare",desc:"Strength scales both Armor (for Castle) and base damage."},{name:"Anointed",type:"Rare",desc:"Holy damage bonus — scales all Judgement explosions."}]},
+    {name:"Sentencing",order:2,primary:false,legendaryNode:{name:"Sentencing",type:"Legendary",desc:"Increases Judgement explosion size and damage. Directly amplifies the core mechanic of every Judgement Paladin build."},glyphs:[{name:"Judicator",lvlReq:15,desc:"Increases damage of Judicator-tagged skills — the build's primary damage glyph."},{name:"Canny",lvlReq:46,desc:"Bonus damage when resource is above threshold — Blessed Hammer builds stay faith-topped."}],keyNodes:[{name:"Benediction",type:"Rare",desc:"Judgement bonus damage nodes."},{name:"Cull",type:"Rare",desc:"Increased damage to Vulnerable enemies alongside Exploit glyph."}]},
+    {name:"Beacon",order:3,primary:false,legendaryNode:{name:"Beacon",type:"Legendary",desc:"Grants bonus damage, attack speed, and Holy damage. Preferred over Shield Bearer for Judgement builds due to attack speed nodes and Holy damage scaling."},glyphs:[{name:"Revenge",lvlReq:15,desc:"Bonus damage after being hit — passive damage buff in sustained combat."},{name:"Indomitable",lvlReq:46,desc:"Survivability glyph. Reduces damage taken when Fortified — pairs with The Best Offense passive."}],keyNodes:[{name:"Radiance",type:"Rare",desc:"Holy damage boost — scales Judgement explosions."},{name:"Luminous",type:"Rare",desc:"Additional Holy damage scaling."}]},
+    {name:"Endure",order:4,primary:false,legendaryNode:{name:"Endure",type:"Legendary",desc:"Increases survivability via Damage Reduction scaling. Useful for pushing higher Pit tiers where survivability becomes the bottleneck."},glyphs:[{name:"Control",lvlReq:46,desc:"Bonus damage vs Crowd Controlled enemies — pairs with Stuns and Slows applied by Spear of the Heavens."}],keyNodes:[{name:"Inner Strength",type:"Rare",desc:"Fortify generation nodes."},{name:"Tenacity",type:"Rare",desc:"Damage Reduction while Fortified."}],note:"Replace Endure with an additional damage board once survivability is comfortable at your current Pit tier."}
+  ],
+  goalAffixes:[
+    {slot:"Helm",affixes:["Cooldown Reduction","Maximum Life","Strength","Armor"]},
+    {slot:"Chest",affixes:["Maximum Life","Armor","Resistances (Fire/Lightning priority)","Cooldown Reduction"]},
+    {slot:"Gloves",affixes:["Attack Speed","Critical Strike Chance","En Garde (Temper)","Blessed Hammer Size (Temper)"]},
+    {slot:"Pants",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"]},
+    {slot:"Boots",affixes:["Movement Speed","Cooldown Reduction","Attacks Reduce Evade Cooldown (Temper — Speed variant only)","Resistance"]},
+    {slot:"Amulet",affixes:["Cooldown Reduction","Critical Strike Damage","Skill Ranks to Blessed Hammer","Resistance"]},
+    {slot:"Rings",affixes:["Critical Strike Chance","Critical Strike Damage","Cooldown Reduction","Damage to Close Enemies"]},
+    {slot:"Weapon",affixes:["Critical Strike Damage","Strength","Cooldown Reduction","Vulnerable Damage"]},
+    {slot:"Shield",affixes:["Block Chance","Armor","Strength","Cooldown Reduction"]}
+  ]
+},
+"wing-strikes-maxroll":{
+  oath:{name:"Disciple Oath",desc:"Casting a Disciple Skill with a cooldown grants Arbiter of Justice form for 4.5 seconds, and Wing Strikes gain Disciple Skill benefits. In Arbiter form, Disciple Skills deal 50% increased damage. With 3 Disciple cooldowns cycling, permanent uptime is achievable — the entire build depends on this."},
+  skillTree:[
+    {name:"Falling Star",type:"Core",rank:"1/5",desc:"Primary Disciple cooldown that triggers Arbiter form. Cast on every cooldown."},
+    {name:"Arbiter of Justice",type:"Ultimate",rank:"1/1",desc:"Transformation — Wing Strikes deal passive damage. Must stay active 100% of the time."},
+    {name:"Defiance Aura",type:"Utility",rank:"1/5",desc:"Second Disciple cooldown for form chaining. Passive armor bonus always on."},
+    {name:"Purify",type:"Utility",rank:"1/5",desc:"Third Disciple cooldown. Cleanses debuffs and extends Arbiter form cycle."},
+    {name:"Fanaticism Aura",type:"Utility",rank:"1/5",desc:"Passive attack speed and Weaken application. Always active."},
+    {name:"Rally",type:"Basic",rank:"1/5",desc:"Faith and speed between pulls."},
+    {name:"Light's Mending",type:"Passive",rank:"3/3",desc:"Heal on Judgement consume — sustain during Wing Strike passive damage."},
+    {name:"Seraph's Aegis",type:"Passive",rank:"3/3",desc:"Block Chance increase — scaling toward 100% cap."},
+    {name:"The Best Offense",type:"Passive",rank:"3/3",desc:"Fortify grants damage bonus. Keep Fortify stacked."},
+    {name:"Anointing",type:"Passive",rank:"3/3",desc:"Healing shared with nearby allies. Passive sustain in group play."}
+  ],
+  keystones:[
+    {name:"Reach of the Law",desc:"Wing Strikes in Arbiter form gain increased size and range — passive AoE coverage increase."},
+    {name:"Seraph's Wings",desc:"Arbiter of Justice Wing Strikes apply Judgement — critical for CDR-cycling builds to always have Judgement applications during form."}
+  ],
+  paragonBoards:[
+    {name:"Starting Board",order:1,primary:true,legendaryNode:{name:"Castle",type:"Legendary",desc:"125% of Damage Reduction from Armor as bonus damage. Armor stacking is the build's primary offensive investment."},glyphs:[{name:"Indomitable",lvlReq:15,desc:"Damage reduction when Fortified — this build generates constant Fortify."},{name:"Territorial",lvlReq:15,desc:"Bonus damage to Close enemies — Wing Strikes are always close range."}],keyNodes:[{name:"Strength",type:"Rare",desc:"Scales both Armor (Castle damage) and flat damage."},{name:"Anointed",type:"Rare",desc:"Holy damage bonus for Wing Strike hits."}]},
+    {name:"Divinity",order:2,primary:false,legendaryNode:{name:"Divinity",type:"Legendary",desc:"Increases damage inside Arbiter of Justice form — directly multiplies every Wing Strike hit."},glyphs:[{name:"Exploit",lvlReq:15,desc:"Damage to Vulnerable enemies — Fanaticism Aura applies Weaken for synergy."},{name:"Canny",lvlReq:46,desc:"Bonus damage at high Faith — Disciple builds maintain resource well."}],keyNodes:[{name:"Luminous",type:"Rare",desc:"Holy damage scaling for Wing Strikes."},{name:"Radiance",type:"Rare",desc:"Additional Holy damage."}]},
+    {name:"Beacon",order:3,primary:false,legendaryNode:{name:"Beacon",type:"Legendary",desc:"Attack speed bonus and Holy damage. Attack speed increases Wing Strike proc rate."},glyphs:[{name:"Revenge",lvlReq:15,desc:"Passive damage boost after being hit."},{name:"Control",lvlReq:46,desc:"Damage vs Crowd Controlled enemies — Holy Light Aura stuns apply CC."}],keyNodes:[{name:"Blurring",type:"Rare",desc:"Attack speed nodes in range of Beacon."},{name:"Fencing",type:"Rare",desc:"Critical strike nodes alongside attack speed."}]}
+  ],
+  goalAffixes:[
+    {slot:"Helm",affixes:["Cooldown Reduction","Maximum Life","Strength","Armor"]},
+    {slot:"Chest",affixes:["Maximum Life","Armor","Resistances","Cooldown Reduction"]},
+    {slot:"Gloves",affixes:["Attack Speed","Critical Strike Chance","Arbiter Duration (Temper)","En Garde (Temper)"]},
+    {slot:"Pants",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"]},
+    {slot:"Boots",affixes:["Movement Speed","Cooldown Reduction","Resistance","Strength"]},
+    {slot:"Amulet",affixes:["Cooldown Reduction","Skill Ranks to Falling Star","Critical Strike Damage","Resistance"]},
+    {slot:"Rings",affixes:["Cooldown Reduction","Critical Strike Chance","Critical Strike Damage","Damage to Close Enemies"]},
+    {slot:"Weapon",affixes:["Critical Strike Damage","Strength","Cooldown Reduction","Attack Speed"]},
+    {slot:"Shield",affixes:["Block Chance","Armor","Strength","Cooldown Reduction"]}
+  ]
+},
+"shield-retribution-maxroll":{
+  oath:{name:"Juggernaut Oath",desc:"Casting a Juggernaut Skill consumes 8 Resolve stacks to increase damage and size for 5 seconds. Also raises maximum Resolve and prevents Resolve loss when hit. Clash buff (granted on Block) must be maintained — it boosts both Block and Thorns simultaneously, underpinning the build's entire offensive and defensive loop."},
+  skillTree:[
+    {name:"Shield of Retribution",type:"Core",rank:"5/5",desc:"Primary damage — hurled shield that ricochets. Each impact triggers Thorns explosions."},
+    {name:"Advance",type:"Basic",rank:"5/5",desc:"Wave Dash variant generates Resolve stacks while dashing."},
+    {name:"Fortress",type:"Utility",rank:"1/5",desc:"Massive survivability cooldown for dangerous affixed areas."},
+    {name:"Defiance Aura",type:"Utility",rank:"1/5",desc:"Thorns amp and Unstoppable access."},
+    {name:"Consecration",type:"Utility",rank:"1/5",desc:"Area damage amp. Always cast before engaging packs."},
+    {name:"Rally",type:"Basic",rank:"1/5",desc:"Faith and speed. Use between pulls."},
+    {name:"The Best Offense",type:"Passive",rank:"3/3",desc:"Fortify grants damage — generates naturally from blocking."},
+    {name:"Juggernaut's Might",type:"Passive",rank:"3/3",desc:"Resolve stacks grant increased damage. Core to the Juggernaut Oath cycle."},
+    {name:"Retribution",type:"Passive",rank:"3/3",desc:"Thorns pulse on block — every Block proc creates an AoE Thorns explosion."},
+    {name:"Clash",type:"Passive",rank:"1/1",desc:"KEYSTONE — Blocking grants Clash buff, increasing Block Chance and Thorns simultaneously."}
+  ],
+  keystones:[
+    {name:"Clash",desc:"On Block, gain Clash for 6 seconds. Clash increases Block Chance by 20% and Thorns by a large multiplier. This is what makes Thorns explosive at scale — never let Clash fall off."},
+    {name:"Verdant Restoration",desc:"Thorns ticks restore Faith. Every Retribution pulse and Shield throw refunds Faith — this is why the build has essentially infinite resources."}
+  ],
+  paragonBoards:[
+    {name:"Starting Board",order:1,primary:true,legendaryNode:{name:"Castle",type:"Legendary",desc:"Armor scales damage via 125% of Damage Reduction from Armor. Stack Armor everywhere — it also scales Thorns through Clash."},glyphs:[{name:"Indomitable",lvlReq:15,desc:"Damage reduction while Fortified — constant Fortify from blocking."},{name:"Territorial",lvlReq:15,desc:"Bonus damage to Close enemies — Shield of Retribution works at mid-close range."}],keyNodes:[{name:"Strength",type:"Rare",desc:"Scales Armor for Castle and flat damage."},{name:"Spiked Shield",type:"Rare",desc:"Thorns and Block Chance nodes — core to the build."}]},
+    {name:"Shield Bearer",order:2,primary:false,legendaryNode:{name:"Shield Bearer",type:"Legendary",desc:"Grants bonus damage and Block-related stats. Slightly lower damage ceiling than Castle but provides more Block synergy nodes."},glyphs:[{name:"Revenge",lvlReq:15,desc:"Bonus damage after being hit — constant in melee Shield throwing range."},{name:"Control",lvlReq:46,desc:"Damage vs CC'd enemies — Shield of Retribution can stun on hit."}],keyNodes:[{name:"Stalwart",type:"Rare",desc:"Block Chance scaling nodes."},{name:"Bodyguard",type:"Rare",desc:"Shield and block stat nodes."}]},
+    {name:"Endure",order:3,primary:false,legendaryNode:{name:"Endure",type:"Legendary",desc:"Additional Damage Reduction scaling for high Pit push safety."},glyphs:[{name:"Exploit",lvlReq:15,desc:"Damage to Vulnerable enemies."},{name:"Canny",lvlReq:46,desc:"Bonus damage at high Faith."}],keyNodes:[{name:"Tenacity",type:"Rare",desc:"Damage Reduction while Fortified."},{name:"Bolster",type:"Rare",desc:"Fortify generation nodes."}]}
+  ],
+  goalAffixes:[
+    {slot:"Helm",affixes:["Maximum Life","Armor","Cooldown Reduction","Strength"]},
+    {slot:"Chest",affixes:["Armor","Maximum Life","Resistances","Thorns"]},
+    {slot:"Gloves",affixes:["Attack Speed","Thorns","En Garde (Temper)","Critical Strike Chance"]},
+    {slot:"Pants",affixes:["Maximum Life","Armor","Resistance","Thorns"]},
+    {slot:"Boots",affixes:["Movement Speed","Cooldown Reduction","Resistance","Armor"]},
+    {slot:"Amulet",affixes:["Cooldown Reduction","Thorns","Skill Ranks to Shield of Retribution","Resistance"]},
+    {slot:"Rings",affixes:["Thorns","Block Chance","Critical Strike Chance","Cooldown Reduction"]},
+    {slot:"Weapon",affixes:["Critical Strike Damage","Strength","Thorns","Cooldown Reduction"]},
+    {slot:"Shield",affixes:["Block Chance","Armor","Thorns","Strength"]}
+  ]
+},
+"blessed-hammer-maxroll":{
+  oath:{name:"Judicator Oath",desc:"Blessed Hammer is a Judicator Core Skill — it pops Judgement marks on hit and benefits from all Judicator bonuses. Basic Skills auto-apply Judgement, so walking into packs with Hammer spinning marks and detonates everything simultaneously. The Judicator Oath is required for Herald's Morningstar's extra hammer procs to interact with Judgement."},
+  skillTree:[
+    {name:"Blessed Hammer",type:"Core",rank:"5/5",desc:"Spiraling hammers follow your movement path, hitting everything nearby. Core damage skill."},
+    {name:"Arbiter of Justice",type:"Ultimate",rank:"1/1",desc:"Passive Wing Strike Judgement application. Maintain constant uptime."},
+    {name:"Holy Bolt",type:"Basic",rank:"5/5",desc:"Fast Judgement application via Judicator Oath. Use between Hammer casts."},
+    {name:"Defiance Aura",type:"Utility",rank:"1/5",desc:"Unstoppable access and passive armor."},
+    {name:"Consecration",type:"Utility",rank:"1/5",desc:"Area damage amp. Always active in packs."},
+    {name:"Rally",type:"Basic",rank:"1/5",desc:"Faith recovery and movement speed."},
+    {name:"Judgement Day",type:"Passive",rank:"1/1",desc:"KEYSTONE — Chain Judgement spreads between targets, making Hammers clear entire screens."},
+    {name:"Proselytizing",type:"Passive",rank:"3/3",desc:"Judicator damage multiplier — essential for all Hammer Judicator builds."},
+    {name:"The Best Offense",type:"Passive",rank:"3/3",desc:"Fortify grants damage bonus."},
+    {name:"Light's Mending",type:"Passive",rank:"3/3",desc:"Healing on Judgement consume — built-in sustain."}
+  ],
+  keystones:[
+    {name:"Judgement Day",desc:"Judgement explosions spread marks to all nearby unmarked enemies — turns Blessed Hammer from a good single-target tool into a screen-clearing AoE monster."},
+    {name:"Watkins' Law",desc:"Blessed Hammer's hit applies Judicator damage bonus to both the Judgement-applying hit and the explosion itself, doubling effective damage output."}
+  ],
+  paragonBoards:[
+    {name:"Starting Board",order:1,primary:true,legendaryNode:{name:"Castle",type:"Legendary",desc:"125% Damage Reduction from Armor as bonus damage. Stack Armor — it scales both Castle damage and survivability simultaneously."},glyphs:[{name:"Exploit",lvlReq:15,desc:"Damage to Vulnerable enemies. Watkins' Law explosions are Vulnerable."},{name:"Territorial",lvlReq:15,desc:"Close enemy damage bonus — Blessed Hammer is close range."}],keyNodes:[{name:"Strength",type:"Rare",desc:"Armor and damage scaling."},{name:"Anointed",type:"Rare",desc:"Holy damage bonus for Hammer hits and explosions."}]},
+    {name:"Sentencing",order:2,primary:false,legendaryNode:{name:"Sentencing",type:"Legendary",desc:"Increases Judgement explosion size and damage — the board specifically built for Judgement Paladins."},glyphs:[{name:"Judicator",lvlReq:15,desc:"Primary damage glyph — boosts all Judicator-tagged skills including Blessed Hammer."},{name:"Canny",lvlReq:46,desc:"Bonus damage at high Faith."}],keyNodes:[{name:"Benediction",type:"Rare",desc:"Judgement damage nodes."},{name:"Cull",type:"Rare",desc:"Vulnerable damage nodes."}]},
+    {name:"Beacon",order:3,primary:false,legendaryNode:{name:"Beacon",type:"Legendary",desc:"Attack speed and Holy damage — increases Hammer cast rate and explosion scaling."},glyphs:[{name:"Revenge",lvlReq:15,desc:"Passive damage boost after being hit."},{name:"Indomitable",lvlReq:46,desc:"Damage reduction while Fortified."}],keyNodes:[{name:"Radiance",type:"Rare",desc:"Holy damage scaling."},{name:"Blurring",type:"Rare",desc:"Attack speed nodes."}]}
+  ],
+  goalAffixes:[
+    {slot:"Helm",affixes:["Cooldown Reduction","Maximum Life","Strength","Armor"]},
+    {slot:"Chest",affixes:["Maximum Life","Armor","Resistances","Cooldown Reduction"]},
+    {slot:"Gloves",affixes:["Attack Speed","Critical Strike Chance","En Garde (Temper)","Blessed Hammer Size (Temper)"]},
+    {slot:"Pants",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"]},
+    {slot:"Boots",affixes:["Movement Speed","Cooldown Reduction","Resistance","Strength"]},
+    {slot:"Amulet",affixes:["Cooldown Reduction","Skill Ranks to Blessed Hammer","Critical Strike Damage","Resistance"]},
+    {slot:"Rings",affixes:["Critical Strike Chance","Critical Strike Damage","Cooldown Reduction","Judicator Damage (Temper)"]},
+    {slot:"Weapon",affixes:["Critical Strike Damage","Strength","Cooldown Reduction","Blessed Hammer Damage (Temper)"]},
+    {slot:"Shield",affixes:["Block Chance","Armor","Strength","Cooldown Reduction"]}
+  ]
+},
+"fist-heavens-maxroll":{
+  oath:{name:"Judicator Oath",desc:"Fist of the Heavens is enhanced by Judicator — both primary bolt and secondary arcs interact with Judgement marks. Basic Skills apply marks, then a single Fist cast can detonate all of them simultaneously across the entire screen via secondary arc chaining. Seal of the Second Trumpet doubles every detonation."},
+  skillTree:[
+    {name:"Fist of the Heavens",type:"Core",rank:"5/5",desc:"Primary AoE — holy lightning bolt with chaining secondary arcs. Each arc can detonate Judgement."},
+    {name:"Arbiter of Justice",type:"Ultimate",rank:"1/1",desc:"Passive Wing Strike Judgement application between Fist casts."},
+    {name:"Spear of the Heavens",type:"Core",rank:"1/5",desc:"Boss supplement — permanent Judgement vessel. Hit with Fist for simultaneous detonation."},
+    {name:"Holy Bolt",type:"Basic",rank:"5/5",desc:"Fast Judgement application before Fist casts."},
+    {name:"Defiance Aura",type:"Utility",rank:"1/5",desc:"Passive armor and Unstoppable."},
+    {name:"Consecration",type:"Utility",rank:"1/5",desc:"Damage amp before major Fist casts."},
+    {name:"Judgement Day",type:"Passive",rank:"1/1",desc:"KEYSTONE — Explosions spread marks to all nearby targets, amplifying every Fist cast exponentially."},
+    {name:"Proselytizing",type:"Passive",rank:"3/3",desc:"Judicator damage multiplier."},
+    {name:"Divine Fury",type:"Passive",rank:"3/3",desc:"Increases damage of Heaven-type skills including Fist of the Heavens."},
+    {name:"The Best Offense",type:"Passive",rank:"3/3",desc:"Fortify grants damage."}
+  ],
+  keystones:[
+    {name:"Judgement Day",desc:"Secondary arcs from Fist of the Heavens each trigger Judgement Day spreading — a single Fist cast can mark and detonate an entire screen of enemies in one animation."},
+    {name:"Holy Volley",desc:"Fist of the Heavens spawns additional secondary bolts at higher skill ranks — wider coverage per cast."}
+  ],
+  paragonBoards:[
+    {name:"Starting Board",order:1,primary:true,legendaryNode:{name:"Castle",type:"Legendary",desc:"Armor scales damage. Fist builds stack Armor for Castle multiplier alongside survivability."},glyphs:[{name:"Exploit",lvlReq:15,desc:"Vulnerable damage — Fist explosions apply Vulnerable."},{name:"Canny",lvlReq:46,desc:"Damage bonus at high resource."}],keyNodes:[{name:"Anointed",type:"Rare",desc:"Holy damage scaling for Fist's lightning damage."},{name:"Strength",type:"Rare",desc:"Armor and damage."}]},
+    {name:"Sentencing",order:2,primary:false,legendaryNode:{name:"Sentencing",type:"Legendary",desc:"Increases Judgement explosion size — each Fist arc covers more area."},glyphs:[{name:"Judicator",lvlReq:15,desc:"Primary Judicator damage glyph — scales every Fist arc."},{name:"Territorial",lvlReq:46,desc:"Close range damage for Spear interactions."}],keyNodes:[{name:"Benediction",type:"Rare",desc:"Judgement damage nodes."},{name:"Wrathful",type:"Rare",desc:"Holy damage nodes."}]},
+    {name:"Beacon",order:3,primary:false,legendaryNode:{name:"Beacon",type:"Legendary",desc:"Cooldown reduction and Holy damage — more Fist casts and higher arc damage."},glyphs:[{name:"Revenge",lvlReq:15,desc:"Passive damage after being hit."},{name:"Control",lvlReq:46,desc:"Damage vs CC'd enemies — Fist applies CC on impact."}],keyNodes:[{name:"Luminous",type:"Rare",desc:"Holy damage scaling."},{name:"Radiance",type:"Rare",desc:"Additional Holy damage."}]}
+  ],
+  goalAffixes:[
+    {slot:"Helm",affixes:["Cooldown Reduction","Maximum Life","Strength","Armor"]},
+    {slot:"Chest",affixes:["Maximum Life","Armor","Resistances","Cooldown Reduction"]},
+    {slot:"Gloves",affixes:["Critical Strike Chance","Attack Speed","En Garde (Temper)","Fist of the Heavens Size (Temper)"]},
+    {slot:"Pants",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"]},
+    {slot:"Boots",affixes:["Movement Speed","Cooldown Reduction","Resistance","Strength"]},
+    {slot:"Amulet",affixes:["Cooldown Reduction","Fist of the Heavens Damage (Temper)","Critical Strike Damage","Resistance"]},
+    {slot:"Rings",affixes:["Critical Strike Chance","Critical Strike Damage","Cooldown Reduction","Vulnerable Damage"]},
+    {slot:"Weapon",affixes:["Critical Strike Damage","Cooldown Reduction","Strength","Fist of the Heavens Damage (Temper)"]},
+    {slot:"Shield",affixes:["Block Chance","Armor","Cooldown Reduction","Strength"]}
+  ]
+},
+"auradin-maxroll":{
+  oath:{name:"Disciple Oath",desc:"Disciple Oath triggers Arbiter of Justice form on every Disciple cooldown cast. Holy Light Aura deals increased damage inside Arbiter form, and Dawnfire converts it to scaling Fire damage. Permanent Arbiter uptime via CDR cycling is the entire build's prerequisite — without it the aura damage is too low."},
+  skillTree:[
+    {name:"Holy Light Aura",type:"Utility",rank:"1/5",desc:"The build's damage source. Radiates passively — Dawnfire converts to growing Fire damage."},
+    {name:"Falling Star",type:"Core",rank:"1/5",desc:"Primary Disciple cooldown for Arbiter form trigger."},
+    {name:"Defiance Aura",type:"Utility",rank:"1/5",desc:"Second Disciple cooldown. Passive armor always on."},
+    {name:"Fanaticism Aura",type:"Utility",rank:"1/5",desc:"Passive attack speed — accelerates aura tick rate."},
+    {name:"Purify",type:"Utility",rank:"1/5",desc:"Third Disciple cooldown. Cleanses debuffs and extends Arbiter cycle."},
+    {name:"Consecration",type:"Utility",rank:"1/5",desc:"Area damage amp layered on top of aura ticks."},
+    {name:"Anointing",type:"Passive",rank:"3/3",desc:"Healing shared with allies. Keep yourself healthy = keep your team healthy."},
+    {name:"Blazing Path",type:"Passive",rank:"3/3",desc:"Fire damage bonus — stacks with Dawnfire conversion."},
+    {name:"The Best Offense",type:"Passive",rank:"3/3",desc:"Fortify grants damage — Arbiter form generates Fortify passively."},
+    {name:"Light's Mending",type:"Passive",rank:"3/3",desc:"Sustain during continuous aura ticking."}
+  ],
+  keystones:[
+    {name:"Dawnfire Conversion",desc:"Dawnfire gloves convert Holy Light Aura passive damage to Fire damage that grows by a percentage with each consecutive kill. This is NOT a skill tree keystone — it's the Unique item interaction that defines the build."},
+    {name:"Seraph's Wings",desc:"Wing Strikes in Arbiter form apply Judgement — provides additional damage ticks during Arbiter form even without direct Judgement interaction."}
+  ],
+  paragonBoards:[
+    {name:"Starting Board",order:1,primary:true,legendaryNode:{name:"Castle",type:"Legendary",desc:"Armor scales damage. Stack Armor everywhere — high armor both keeps you alive and massively boosts damage through Castle."},glyphs:[{name:"Exploit",lvlReq:15,desc:"Damage to Vulnerable enemies — Fanaticism Aura applies Weaken."},{name:"Indomitable",lvlReq:15,desc:"Damage reduction while Fortified."}],keyNodes:[{name:"Strength",type:"Rare",desc:"Armor and damage scaling."},{name:"Blazing",type:"Rare",desc:"Fire damage scaling for Dawnfire-converted aura."}]},
+    {name:"Beacon",order:2,primary:false,legendaryNode:{name:"Beacon",type:"Legendary",desc:"Attack speed bonus — Holy Light Aura scales linearly with Attack Speed. The more attacks per second, the more aura ticks."},glyphs:[{name:"Canny",lvlReq:15,desc:"Bonus damage when resource is full."},{name:"Revenge",lvlReq:46,desc:"Passive damage boost after being hit."}],keyNodes:[{name:"Blurring",type:"Rare",desc:"Attack speed nodes — critical for aura scaling."},{name:"Fencing",type:"Rare",desc:"Additional attack speed nodes."}]},
+    {name:"Divinity",order:3,primary:false,legendaryNode:{name:"Divinity",type:"Legendary",desc:"Increases damage inside Arbiter of Justice form — multiplies every aura tick while in form."},glyphs:[{name:"Territorial",lvlReq:15,desc:"Close enemy damage bonus."},{name:"Control",lvlReq:46,desc:"Damage vs CC'd enemies — Holy Light Aura can stun."}],keyNodes:[{name:"Luminous",type:"Rare",desc:"Holy damage scaling."},{name:"Anointed",type:"Rare",desc:"Holy damage bonus."}]}
+  ],
+  goalAffixes:[
+    {slot:"Helm",affixes:["Cooldown Reduction","Maximum Life","Strength","Attack Speed"]},
+    {slot:"Chest",affixes:["Maximum Life","Armor","Resistances","Cooldown Reduction"]},
+    {slot:"Gloves",affixes:["Attack Speed (Dawnfire — fixed slot)","—","—","—"]},
+    {slot:"Pants",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"]},
+    {slot:"Boots",affixes:["Movement Speed","Cooldown Reduction","Resistance","Attack Speed"]},
+    {slot:"Amulet",affixes:["Cooldown Reduction","Attack Speed","Critical Strike Damage","Resistance"]},
+    {slot:"Rings",affixes:["Attack Speed","Critical Strike Chance","Cooldown Reduction","Fire Damage"]},
+    {slot:"Weapon",affixes:["Attack Speed","Critical Strike Damage","Cooldown Reduction","Strength"]},
+    {slot:"Shield",affixes:["Block Chance","Armor","Cooldown Reduction","Strength"]}
+  ]
+},
+"brandish-maxroll":{
+  oath:{name:"Zealot Oath",desc:"Attacking with Zealot Core or Ultimate Skills generates Fervor stacks for 2 seconds. Critical Strikes cause those skills to hit an additional time per Fervor stack. Basic Skills refresh Fervor stacks. This creates an escalating damage loop where more attack speed = more crits = more extra hits = more Fervor maintenance."},
+  skillTree:[
+    {name:"Brandish",type:"Core",rank:"5/5",desc:"Primary Zealot Core damage skill — rapid melee strikes that benefit from all Fervor bonuses."},
+    {name:"Zenith",type:"Core",rank:"3/5",desc:"AoE melee sweep for dense packs. Zealot-tagged for Fervor."},
+    {name:"Advance",type:"Basic",rank:"5/5",desc:"Fervor-refreshing basic skill with mobility. Essential for stack maintenance."},
+    {name:"Defiance Aura",type:"Utility",rank:"1/5",desc:"Unstoppable access for melee survivability."},
+    {name:"Consecration",type:"Utility",rank:"1/5",desc:"Area damage amp. Always cast before engaging elites."},
+    {name:"Fanaticism Aura",type:"Utility",rank:"1/5",desc:"Attack speed aura — the Zealot Oath's primary damage lever."},
+    {name:"Fervent Strike",type:"Passive",rank:"3/3",desc:"Fervor generation speed increase — reach max stacks faster."},
+    {name:"Frenzied Assault",type:"Passive",rank:"3/3",desc:"Increased damage during Fervor windows."},
+    {name:"The Best Offense",type:"Passive",rank:"3/3",desc:"Fortify grants damage — stacks from blocking while attacking."},
+    {name:"Blurring",type:"Passive",rank:"3/3",desc:"Attack speed passive bonus — Zealot Oath scales with attack speed above other stats."}
+  ],
+  keystones:[
+    {name:"Fervent Fury",desc:"At maximum Fervor stacks, Critical Strikes have a chance to strike an additional time. Combined with Fanaticism Aura's attack speed bonus, this creates massive burst windows."},
+    {name:"Burning Fervor",desc:"Maximum Fervor stacks add a Fire damage bonus to all Zealot skills — minor but contributes to overall damage multiplier stacking."}
+  ],
+  paragonBoards:[
+    {name:"Starting Board",order:1,primary:true,legendaryNode:{name:"Castle",type:"Legendary",desc:"Armor to damage conversion. Stack Armor — it also lets Brandish survive at melee range."},glyphs:[{name:"Exploit",lvlReq:15,desc:"Damage to Vulnerable enemies."},{name:"Territorial",lvlReq:15,desc:"Close range bonus — Brandish is always in melee."}],keyNodes:[{name:"Strength",type:"Rare",desc:"Armor and damage scaling."},{name:"Whale",type:"Rare",desc:"Critical Strike nodes alongside Fervor bonus."}]},
+    {name:"Fervent",order:2,primary:false,legendaryNode:{name:"Fervent",type:"Legendary",desc:"Dedicated Fervor board — grants Fervor generation speed and Fervor-related damage bonuses."},glyphs:[{name:"Control",lvlReq:15,desc:"Bonus damage vs CC'd enemies — Advance can CC."},{name:"Canny",lvlReq:46,desc:"Resource-full damage bonus."}],keyNodes:[{name:"Surgical",type:"Rare",desc:"Critical strike nodes inside Fervent board."},{name:"Blurring",type:"Rare",desc:"Attack speed nodes."}]},
+    {name:"Endure",order:3,primary:false,legendaryNode:{name:"Endure",type:"Legendary",desc:"Survivability board — important for melee Brandish builds taking sustained damage at close range."},glyphs:[{name:"Revenge",lvlReq:15,desc:"Damage boost after being hit — very frequent at melee range."},{name:"Indomitable",lvlReq:46,desc:"Damage reduction while Fortified."}],keyNodes:[{name:"Tenacity",type:"Rare",desc:"Damage Reduction while Fortified."},{name:"Bolster",type:"Rare",desc:"Fortify generation."}],note:"Control replaces Exploit glyph when pushing higher Pit tiers where CC application becomes more valuable."}
+  ],
+  goalAffixes:[
+    {slot:"Helm",affixes:["Maximum Life","Armor","Cooldown Reduction","Strength"]},
+    {slot:"Chest",affixes:["Maximum Life","Armor","Resistances","Cooldown Reduction"]},
+    {slot:"Gloves",affixes:["Attack Speed","Critical Strike Chance","Brandish Damage (Temper)","En Garde (Temper)"]},
+    {slot:"Pants",affixes:["Maximum Life","Armor","Resistance","Attack Speed"]},
+    {slot:"Boots",affixes:["Movement Speed","Cooldown Reduction","Resistance","Attack Speed"]},
+    {slot:"Amulet",affixes:["Cooldown Reduction","Skill Ranks to Brandish","Critical Strike Damage","Attack Speed"]},
+    {slot:"Rings",affixes:["Attack Speed","Critical Strike Chance","Critical Strike Damage","Damage to Close Enemies"]},
+    {slot:"Weapon",affixes:["Critical Strike Damage","Attack Speed","Strength","Brandish Damage (Temper)"]},
+    {slot:"Shield",affixes:["Block Chance","Armor","Attack Speed","Strength"]}
+  ]
+},
+"support-maxroll":{
+  oath:{name:"Disciple Oath (default)",desc:"Support Paladin uses Disciple Oath by default due to lack of better options. It grants Arbiter form for 4.5 seconds on Disciple skill cast — the Evade in Arbiter form becomes a powerful repositioning tool. This is NOT the primary damage source; the support role is purely about enabling your Judgement Paladin carry."},
+  skillTree:[
+    {name:"Spear of the Heavens",type:"Core",rank:"5/5",desc:"Spam on cooldown — flood battlefield with permanent Judgement vessels for your carry."},
+    {name:"Blessed Hammer",type:"Core",rank:"3/5",desc:"Fill Spear cooldown gaps. DO NOT use to detonate your own Judgement — let the carry do that."},
+    {name:"Purify",type:"Utility",rank:"1/5",desc:"Applies Wreath of Auric Laurel damage amp to your carry on cast."},
+    {name:"Fortress",type:"Utility",rank:"1/5",desc:"Survivability cooldown. Stay alive to keep supporting."},
+    {name:"Defiance Aura",type:"Utility",rank:"1/5",desc:"Casts Consecration via Sundered Night — area damage buff for team."},
+    {name:"Sentence",type:"Passive",rank:"3/3",desc:"Applies Law debuff via Judgement — further amplifies carry's damage output."},
+    {name:"Anointing",type:"Passive",rank:"3/3",desc:"All healing received is shared with nearby allies. Stay healthy = keep team healthy."},
+    {name:"Undying",type:"Passive",rank:"3/3",desc:"Amplifies healing output shared via Anointing."},
+    {name:"Herald's Might",type:"Passive",rank:"3/3",desc:"Cooldown reduction on Spear of the Heavens — more Spears per minute."},
+    {name:"Indomitable Will",type:"Passive",rank:"3/3",desc:"Survivability passive — support needs to stay alive above all else."}
+  ],
+  keystones:[
+    {name:"CRITICAL RULE: Never Apply Judgement",desc:"If you apply Judgement to an enemy before your carry does, they cannot apply their own Judgement — and they deal zero Judgement damage. Never run Judgement Day, Rite of Judgement, or any Judgement source in support role."},
+    {name:"Spear Permanence",desc:"Judgement on Spear of the Heavens is permanent if detonated by Core Skills (not by other Judgements). Keep Spears alive for your carry to hit repeatedly."}
+  ],
+  paragonBoards:[
+    {name:"Starting Board",order:1,primary:true,legendaryNode:{name:"Castle",type:"Legendary",desc:"Armor to damage conversion — even support builds take this for personal survivability scaling."},glyphs:[{name:"Indomitable",lvlReq:15,desc:"Damage reduction while Fortified — support needs survivability above all else."},{name:"Territorial",lvlReq:15,desc:"Close range bonus — support is always near the carry."}],keyNodes:[{name:"Anointed",type:"Rare",desc:"Holy damage — even support benefits from Holy scaling on Spear of the Heavens."},{name:"Strength",type:"Rare",desc:"Armor and survivability scaling."}]},
+    {name:"Relentless",order:2,primary:false,legendaryNode:{name:"Relentless",type:"Legendary",desc:"Grants Cooldown Reduction while moving. If CDR from gear is insufficient, use Relentless board — requires moving every 2 seconds to maintain buff."},glyphs:[{name:"Revenge",lvlReq:15,desc:"Passive damage boost — support still wants to deal some damage with Spears."},{name:"Canny",lvlReq:46,desc:"Bonus damage when Faith is full."}],keyNodes:[{name:"Blurring",type:"Rare",desc:"Attack speed nodes — faster Spear casts per cooldown."},{name:"Fencing",type:"Rare",desc:"CDR and speed nodes."}],note:"Use Relentless board only if you cannot reach sufficient CDR from gear alone. It requires constant movement — stationary players lose the CDR buff."},
+    {name:"Endure",order:3,primary:false,legendaryNode:{name:"Endure",type:"Legendary",desc:"Survivability board — support Paladin is often in dangerous positions near high-level content bosses."},glyphs:[{name:"Control",lvlReq:15,desc:"Bonus damage vs CC'd enemies."},{name:"Exploit",lvlReq:46,desc:"Vulnerable damage."}],keyNodes:[{name:"Tenacity",type:"Rare",desc:"Damage Reduction while Fortified."},{name:"Bolster",type:"Rare",desc:"Fortify generation."}]}
+  ],
+  goalAffixes:[
+    {slot:"Helm",affixes:["Cooldown Reduction","Maximum Life","Armor","Resistance"]},
+    {slot:"Chest",affixes:["Maximum Life","Armor","Resistances","Cooldown Reduction"]},
+    {slot:"Gloves",affixes:["Cooldown Reduction","Attack Speed","En Garde (Temper)","Healing Given (Temper)"]},
+    {slot:"Pants",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"]},
+    {slot:"Boots",affixes:["Movement Speed","Cooldown Reduction","Resistance","Maximum Life"]},
+    {slot:"Amulet",affixes:["Cooldown Reduction","Skill Ranks to Spear of the Heavens","Maximum Life","Resistance"]},
+    {slot:"Rings",affixes:["Cooldown Reduction","Maximum Life","Healing Given","Resistance"]},
+    {slot:"Weapon",affixes:["Cooldown Reduction","Strength","Maximum Life","Armor"]},
+    {slot:"Shield",affixes:["Block Chance","Armor","Cooldown Reduction","Maximum Life"]}
+  ]
+},
+"judgement-icyveins":{
+  oath:{name:"Judicator Oath",desc:"The Icy Veins variant places greater emphasis on Spear of the Heavens as the primary Judgement delivery vehicle, treating it as the boss-phase core skill. The Judicator Oath lets Spear carry permanent Judgement vessels that can be detonated endlessly by Blessed Hammer, and Seal of the Second Trumpet makes each detonation fire twice."},
+  skillTree:[
+    {name:"Spear of the Heavens",type:"Core",rank:"1/5",desc:"Primary boss tool — each Spear carries permanent Judgement. Hit with Blessed Hammer for detonations."},
+    {name:"Blessed Hammer",type:"Core",rank:"5/5",desc:"Detonates both Spears and enemy Judgement marks simultaneously."},
+    {name:"Arbiter of Justice",type:"Ultimate",rank:"1/1",desc:"Passive Wing Strike Judgement application. Maintain 100% uptime."},
+    {name:"Defiance Aura",type:"Utility",rank:"1/5",desc:"Passive armor and Unstoppable access."},
+    {name:"Fanaticism Aura",type:"Utility",rank:"1/5",desc:"Passive Weaken on enemies — consistent debuff uptime."},
+    {name:"Consecration",type:"Utility",rank:"1/5",desc:"Area damage amp and healing."},
+    {name:"Judgement Day",type:"Passive",rank:"1/1",desc:"KEYSTONE — Spreads Judgement marks on explosion. Critical for chain reactions."},
+    {name:"Proselytizing",type:"Passive",rank:"3/3",desc:"Judicator damage multiplier."},
+    {name:"Watkins' Law",type:"Passive",rank:"1/1",desc:"Blessed Hammer Judicator bonus applies to both hit and explosion."},
+    {name:"The Best Offense",type:"Passive",rank:"3/3",desc:"Fortify grants damage."}
+  ],
+  keystones:[
+    {name:"Judgement Day",desc:"Essential for AoE chain spreading — Seal of the Second Trumpet's double-explosion interacts with Judgement Day, meaning each mark spread by a doubled explosion can itself double-fire."},
+    {name:"Watkins' Law",desc:"Blessed Hammer benefits from Judicator bonus on both the hit that applies Judgement AND the explosion — effectively double-dipping the damage multiplier."}
+  ],
+  paragonBoards:[
+    {name:"Starting Board",order:1,primary:true,legendaryNode:{name:"Castle",type:"Legendary",desc:"Armor to damage scaling. Icy Veins specifically calls out stacking Armor on all gear for Castle — use Elixir of Iron Barbs II for extra Armor scaling."},glyphs:[{name:"Exploit",lvlReq:15,desc:"Vulnerable damage — Seal of the Second Trumpet doubled explosions apply Vulnerable."},{name:"Territorial",lvlReq:15,desc:"Close range bonus."}],keyNodes:[{name:"Strength",type:"Rare",desc:"Armor and damage."},{name:"Anointed",type:"Rare",desc:"Holy damage nodes."}]},
+    {name:"Sentencing",order:2,primary:false,legendaryNode:{name:"Sentencing",type:"Legendary",desc:"Judgement explosion size and damage — directly scales the doubled Seal of the Second Trumpet detonations."},glyphs:[{name:"Judicator",lvlReq:15,desc:"Primary Judicator glyph."},{name:"Indomitable",lvlReq:46,desc:"Survivability while Fortified."}],keyNodes:[{name:"Benediction",type:"Rare",desc:"Judgement damage nodes."},{name:"Cull",type:"Rare",desc:"Vulnerable damage."}]},
+    {name:"Beacon",order:3,primary:false,legendaryNode:{name:"Beacon",type:"Legendary",desc:"Holy damage and attack speed. Icy Veins notes Beacon outperforms Shield Bearer for Judgement builds due to Holy scaling and attack speed nodes."},glyphs:[{name:"Revenge",lvlReq:15,desc:"Passive damage boost."},{name:"Control",lvlReq:46,desc:"CC damage bonus."}],keyNodes:[{name:"Radiance",type:"Rare",desc:"Holy damage nodes."},{name:"Luminous",type:"Rare",desc:"Additional Holy scaling."}]}
+  ],
+  goalAffixes:[
+    {slot:"Helm",affixes:["Cooldown Reduction","Maximum Life","Strength","Armor"]},
+    {slot:"Chest",affixes:["Maximum Life","Armor (for Castle)","Resistances","Cooldown Reduction"]},
+    {slot:"Gloves",affixes:["Attack Speed","Critical Strike Chance","En Garde (Temper)","Judgement Double Damage (Temper — GA priority)"]},
+    {slot:"Pants",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"]},
+    {slot:"Boots",affixes:["Movement Speed","Cooldown Reduction","Resistance","Strength"]},
+    {slot:"Amulet",affixes:["Cooldown Reduction","Arbiter CDR (Temper — with GA Seal)","Critical Strike Damage","Resistance"]},
+    {slot:"Rings",affixes:["Critical Strike Chance","Critical Strike Damage","Cooldown Reduction","Vulnerable Damage"]},
+    {slot:"Weapon",affixes:["Critical Strike Damage","Strength","Cooldown Reduction","Vulnerable Damage"]},
+    {slot:"Shield",affixes:["Block Chance","Armor (for Castle + Herald)","Strength","En Garde (Temper)"]}
+  ]
+},
+"blessed-hammer-icyveins":{
+  oath:{name:"Judicator Oath",desc:"Same Hammerdin core as the Maxroll version — Judicator Oath lets Blessed Hammer pop Judgement marks. Icy Veins emphasizes navigator movement (circling packs) to maximize hits per cast, and recommends Harlequin Crest as the helm upgrade that removes the need for Aspect of Glynn's Anvil entirely."},
+  skillTree:[
+    {name:"Blessed Hammer",type:"Core",rank:"5/5",desc:"Spiral hammers follow movement. Position centrally — navigate in circles for maximum coverage."},
+    {name:"Arbiter of Justice",type:"Ultimate",rank:"1/1",desc:"Wing Strike passive Judgement. Maintain 100% uptime."},
+    {name:"Holy Bolt",type:"Basic",rank:"5/5",desc:"Fast Judgement marks for Hammer detonation."},
+    {name:"Defiance Aura",type:"Utility",rank:"1/5",desc:"Passive armor and Unstoppable."},
+    {name:"Rally",type:"Basic",rank:"1/5",desc:"Faith recovery."},
+    {name:"Consecration",type:"Utility",rank:"1/5",desc:"Damage amp. Cast before engaging packs."},
+    {name:"Judgement Day",type:"Passive",rank:"1/1",desc:"KEYSTONE — Chain Judgement spreading."},
+    {name:"Proselytizing",type:"Passive",rank:"3/3",desc:"Judicator damage multiplier."},
+    {name:"Watkins' Law",type:"Passive",rank:"1/1",desc:"Blessed Hammer double-dips Judicator bonus."},
+    {name:"Light's Mending",type:"Passive",rank:"3/3",desc:"Healing on Judgement consume."}
+  ],
+  keystones:[
+    {name:"Judgement Day + Watkins' Law",desc:"The Icy Veins Hammerdin combines both keystones for maximum synergy — Watkins' Law doubles effective Hammer damage, and Judgement Day turns each explosion into a chain reaction across the entire screen."},
+    {name:"Herald's Morningstar Procs",desc:"Herald's Morningstar can spawn additional hammers per cast. These extra hammers interact with Watkins' Law and Judgement Day for exponential proc scaling."}
+  ],
+  paragonBoards:[
+    {name:"Starting Board",order:1,primary:true,legendaryNode:{name:"Castle",type:"Legendary",desc:"Armor to damage scaling. Same as all Paladin builds — Armor is the stat that scales everything."},glyphs:[{name:"Exploit",lvlReq:15,desc:"Vulnerable damage bonus."},{name:"Territorial",lvlReq:15,desc:"Close range bonus for Hammer melee range."}],keyNodes:[{name:"Strength",type:"Rare",desc:"Armor and damage."},{name:"Anointed",type:"Rare",desc:"Holy damage."}]},
+    {name:"Sentencing",order:2,primary:false,legendaryNode:{name:"Sentencing",type:"Legendary",desc:"Judgement explosion size — Hammerdin detonations hit wider areas."},glyphs:[{name:"Judicator",lvlReq:15,desc:"Primary Judicator glyph."},{name:"Canny",lvlReq:46,desc:"Resource-full damage."}],keyNodes:[{name:"Benediction",type:"Rare",desc:"Judgement damage."},{name:"Cull",type:"Rare",desc:"Vulnerable damage."}]},
+    {name:"Beacon",order:3,primary:false,legendaryNode:{name:"Beacon",type:"Legendary",desc:"Attack speed and Holy damage — more Hammer casts per second."},glyphs:[{name:"Revenge",lvlReq:15,desc:"Passive damage boost."},{name:"Indomitable",lvlReq:46,desc:"Survivability."}],keyNodes:[{name:"Radiance",type:"Rare",desc:"Holy damage."},{name:"Blurring",type:"Rare",desc:"Attack speed nodes."}]}
+  ],
+  goalAffixes:[
+    {slot:"Helm",affixes:["Cooldown Reduction","Maximum Life","Strength","Armor"]},
+    {slot:"Chest",affixes:["Maximum Life","Armor","Resistances","Cooldown Reduction"]},
+    {slot:"Gloves",affixes:["Attack Speed","Critical Strike Chance","Blessed Hammer Size (Temper)","En Garde (Temper)"]},
+    {slot:"Pants",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"]},
+    {slot:"Boots",affixes:["Movement Speed","Cooldown Reduction","Resistance","Strength"]},
+    {slot:"Amulet",affixes:["Cooldown Reduction","Skill Ranks to Blessed Hammer","Critical Strike Damage","Resistance"]},
+    {slot:"Rings",affixes:["Critical Strike Chance","Critical Strike Damage","Cooldown Reduction","Judicator Damage (Temper)"]},
+    {slot:"Weapon",affixes:["Critical Strike Damage","Attack Speed","Strength","Blessed Hammer Damage (Temper)"]},
+    {slot:"Shield",affixes:["Block Chance","Armor","Cooldown Reduction","Strength"]}
+  ]
+},
+"auradin-icyveins":{
+  oath:{name:"Disciple Oath",desc:"Icy Veins' Auradin emphasizes the Disciple Oath more explicitly: Falling Star is the primary Disciple cooldown trigger, and with the cooldown + charge system, permanent Arbiter form is achievable. Holy Light Aura inside Arbiter form scales with Attack Speed — Icy Veins calls out S12 buffs as making this the strongest the Auradin has ever been."},
+  skillTree:[
+    {name:"Holy Light Aura",type:"Utility",rank:"1/5",desc:"The passive fire aura (via Dawnfire) that kills everything around you."},
+    {name:"Falling Star",type:"Core",rank:"1/5",desc:"Disciple cooldown with extra charges — primary Arbiter form trigger."},
+    {name:"Defiance Aura",type:"Utility",rank:"1/5",desc:"Second Disciple cooldown for form cycling."},
+    {name:"Purify",type:"Utility",rank:"1/5",desc:"Third Disciple cooldown rotation piece."},
+    {name:"Fanaticism Aura",type:"Utility",rank:"1/5",desc:"Attack speed aura — Holy Light Aura scales with attack speed."},
+    {name:"Consecration",type:"Utility",rank:"1/5",desc:"Area damage amp layered on aura ticks."},
+    {name:"Blazing Path",type:"Passive",rank:"3/3",desc:"Fire damage bonus stacks with Dawnfire conversion."},
+    {name:"Light's Mending",type:"Passive",rank:"3/3",desc:"Passive sustain during aura ticking."},
+    {name:"The Best Offense",type:"Passive",rank:"3/3",desc:"Fortify grants damage."},
+    {name:"Anointing",type:"Passive",rank:"3/3",desc:"Healing shared with allies."}
+  ],
+  keystones:[
+    {name:"Dawnfire Fire Scaling",desc:"Dawnfire is not a skill tree node — it's the Unique interaction that defines the build. Holy Light Aura converts to Fire Damage that increases by X% per kill. This effectively means the build gets stronger the faster you kill, creating a positive feedback loop."},
+    {name:"Attack Speed Scaling",desc:"Holy Light Aura ticks at a rate directly proportional to attack speed. Every 1% of attack speed is a 1% aura damage increase. This is why Beacon board (attack speed nodes) and Fanaticism Aura are core."}
+  ],
+  paragonBoards:[
+    {name:"Starting Board",order:1,primary:true,legendaryNode:{name:"Castle",type:"Legendary",desc:"Armor to damage scaling. Stack Armor — Icy Veins notes Armor provides both offensive and defensive scaling simultaneously."},glyphs:[{name:"Exploit",lvlReq:15,desc:"Vulnerable damage bonus."},{name:"Indomitable",lvlReq:15,desc:"Damage reduction while Fortified."}],keyNodes:[{name:"Strength",type:"Rare",desc:"Armor and damage."},{name:"Blazing",type:"Rare",desc:"Fire damage nodes for Dawnfire conversion."}]},
+    {name:"Beacon",order:2,primary:false,legendaryNode:{name:"Beacon",type:"Legendary",desc:"Attack speed and Holy damage. Icy Veins explicitly notes Beacon outperforms Shield Bearer for Auradin due to attack speed — aura scales linearly with it."},glyphs:[{name:"Canny",lvlReq:15,desc:"Resource-full bonus damage."},{name:"Territorial",lvlReq:46,desc:"Close range bonus — aura has short radius."}],keyNodes:[{name:"Blurring",type:"Rare",desc:"Attack speed nodes — critical for aura scaling."},{name:"Fencing",type:"Rare",desc:"More attack speed nodes."}]},
+    {name:"Divinity",order:3,primary:false,legendaryNode:{name:"Divinity",type:"Legendary",desc:"Damage multiplier inside Arbiter form — multiplies all aura ticks during form."},glyphs:[{name:"Revenge",lvlReq:15,desc:"Damage boost after being hit."},{name:"Control",lvlReq:46,desc:"CC damage bonus."}],keyNodes:[{name:"Luminous",type:"Rare",desc:"Holy damage."},{name:"Anointed",type:"Rare",desc:"Holy damage scaling."}]}
+  ],
+  goalAffixes:[
+    {slot:"Helm",affixes:["Cooldown Reduction","Attack Speed","Maximum Life","Armor"]},
+    {slot:"Chest",affixes:["Maximum Life","Armor","Resistances","Cooldown Reduction"]},
+    {slot:"Gloves",affixes:["Dawnfire (fixed)","—","—","—"]},
+    {slot:"Pants",affixes:["Maximum Life","Armor","Resistance","Attack Speed"]},
+    {slot:"Boots",affixes:["Movement Speed","Attack Speed","Cooldown Reduction","Resistance"]},
+    {slot:"Amulet",affixes:["Cooldown Reduction","Attack Speed","Critical Strike Damage","Resistance"]},
+    {slot:"Rings",affixes:["Attack Speed","Critical Strike Chance","Fire Damage","Cooldown Reduction"]},
+    {slot:"Weapon",affixes:["Attack Speed","Critical Strike Damage","Cooldown Reduction","Strength"]},
+    {slot:"Shield",affixes:["Block Chance","Armor","Cooldown Reduction","Attack Speed"]}
+  ]
+},
+"arbiter-disciple-icyveins":{
+  oath:{name:"Disciple Oath",desc:"Disciple Oath is core to Wing Strikes — in Arbiter form Wing Strikes gain Disciple Skill benefits and deal 50% increased damage. Icy Veins notes the build technically works without any Uniques, making this the most accessible Paladin endgame build. Cooldown Reduction is the singular most important stat."},
+  skillTree:[
+    {name:"Falling Star",type:"Core",rank:"1/5",desc:"Primary Disciple cooldown for Arbiter form. Multiple charges allow frequent triggers."},
+    {name:"Arbiter of Justice",type:"Ultimate",rank:"1/1",desc:"Transformation. Wing Strikes deal automatic passive damage while in form."},
+    {name:"Advance",type:"Basic",rank:"3/5",desc:"Disciple-synergy movement skill. Use if needing resource generation."},
+    {name:"Defiance Aura",type:"Utility",rank:"1/5",desc:"Second Disciple cooldown + passive armor."},
+    {name:"Holy Light Aura",type:"Utility",rank:"1/5",desc:"Healing aura and CC stun on enemies — activating it generates CC for Indomitable glyph."},
+    {name:"Fanaticism Aura",type:"Utility",rank:"1/5",desc:"Passive attack speed — accelerates Wing Strike proc rate."},
+    {name:"Anointing",type:"Passive",rank:"3/3",desc:"Healing shared with allies."},
+    {name:"The Best Offense",type:"Passive",rank:"3/3",desc:"Fortify grants damage."},
+    {name:"Seraph's Aegis",type:"Passive",rank:"3/3",desc:"Block Chance increase — scaling toward 100%."},
+    {name:"Light's Mending",type:"Passive",rank:"3/3",desc:"Healing on Judgement consume — Wing Strike applies Judgement via Seraph's Wings."}
+  ],
+  keystones:[
+    {name:"Seraph's Wings",desc:"Wing Strikes in Arbiter form apply Judgement to hit enemies. Combined with Reach of the Law (increased Wing Strike range), this ensures passive mark application across wide areas."},
+    {name:"Reach of the Law",desc:"Increases Wing Strike size and range in Arbiter form. More coverage per Wing Strike hit = more passive Judgement application = more damage ticks."}
+  ],
+  paragonBoards:[
+    {name:"Starting Board",order:1,primary:true,legendaryNode:{name:"Castle",type:"Legendary",desc:"Armor to damage scaling — Icy Veins explicitly highlights stacking Armor everywhere for Castle. Raheir mercenary also provides Armor which scales Castle."},glyphs:[{name:"Indomitable",lvlReq:15,desc:"Damage reduction while Fortified."},{name:"Territorial",lvlReq:15,desc:"Close range bonus — Wing Strikes are always close."}],keyNodes:[{name:"Strength",type:"Rare",desc:"Scales both Armor and base damage."},{name:"Anointed",type:"Rare",desc:"Holy damage for Wing Strike hits."}]},
+    {name:"Divinity",order:2,primary:false,legendaryNode:{name:"Divinity",type:"Legendary",desc:"Increases damage inside Arbiter of Justice form — directly multiplies every Wing Strike while in form."},glyphs:[{name:"Exploit",lvlReq:15,desc:"Damage to Vulnerable — Fanaticism applies Weaken."},{name:"Canny",lvlReq:46,desc:"Bonus damage at full Faith."}],keyNodes:[{name:"Luminous",type:"Rare",desc:"Holy damage scaling."},{name:"Radiance",type:"Rare",desc:"Additional Holy."}]},
+    {name:"Beacon",order:3,primary:false,legendaryNode:{name:"Beacon",type:"Legendary",desc:"Attack speed and Holy damage. Attack speed increases Wing Strike frequency."},glyphs:[{name:"Revenge",lvlReq:15,desc:"Passive damage boost after being hit."},{name:"Control",lvlReq:46,desc:"Bonus damage vs CC'd enemies via Holy Light Aura stun."}],keyNodes:[{name:"Blurring",type:"Rare",desc:"Attack speed nodes."},{name:"Fencing",type:"Rare",desc:"More attack speed."}]}
+  ],
+  goalAffixes:[
+    {slot:"Helm",affixes:["Cooldown Reduction","Maximum Life","Strength","Armor"]},
+    {slot:"Chest",affixes:["Maximum Life","Armor","Resistances","Cooldown Reduction"]},
+    {slot:"Gloves",affixes:["Attack Speed","Critical Strike Chance","Arbiter Duration (Temper)","En Garde (Temper)"]},
+    {slot:"Pants",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"]},
+    {slot:"Boots",affixes:["Movement Speed","Cooldown Reduction","Resistance","Strength"]},
+    {slot:"Amulet",affixes:["Cooldown Reduction","Skill Ranks to Falling Star","Critical Strike Damage","Resistance"]},
+    {slot:"Rings",affixes:["Cooldown Reduction","Critical Strike Chance","Critical Strike Damage","Damage to Close Enemies"]},
+    {slot:"Weapon",affixes:["Critical Strike Damage","Cooldown Reduction","Strength","Attack Speed"]},
+    {slot:"Shield",affixes:["Block Chance","Armor","Strength","Cooldown Reduction"]}
+  ]
+},
+"zealot-icyveins":{
+  oath:{name:"Zealot Oath",desc:"Attacking with Zealot Core and Ultimate Skills generates Fervor stacks. Critical Strikes cause those skills to hit an additional time per Fervor stack. Basic Skills refresh stacks. Icy Veins emphasizes that the Zealot Oath rewards relentless pressure — never stop attacking, never let Fervor drop, and use Fanaticism Aura to maintain attack speed at all times."},
+  skillTree:[
+    {name:"Zenith",type:"Core",rank:"5/5",desc:"Primary Zealot Core AoE sweep. Fervor stacks cause extra hits on every Critical Strike."},
+    {name:"Advance",type:"Basic",rank:"5/5",desc:"Wave Dash variant — generates Resolve stacks while dashing. Refreshes Fervor."},
+    {name:"Defiance Aura",type:"Utility",rank:"1/5",desc:"Passive armor and Unstoppable."},
+    {name:"Fanaticism Aura",type:"Utility",rank:"1/5",desc:"Attack speed aura — THE most important skill for Zealot Oath scaling."},
+    {name:"Consecration",type:"Utility",rank:"1/5",desc:"Area damage amp before packs."},
+    {name:"Rally",type:"Basic",rank:"1/5",desc:"Faith recovery and Fervor stack refresh."},
+    {name:"Zealot's Fury",type:"Passive",rank:"3/3",desc:"Fervor generation speed — reach max stacks faster."},
+    {name:"The Best Offense",type:"Passive",rank:"3/3",desc:"Fortify grants damage."},
+    {name:"Blurring",type:"Passive",rank:"3/3",desc:"Attack speed passive — stacks with Fanaticism Aura."},
+    {name:"Frenzied Assault",type:"Passive",rank:"3/3",desc:"Increased damage during Fervor windows."}
+  ],
+  keystones:[
+    {name:"Fervent Fury",desc:"At max Fervor stacks, Zenith Critical Strikes have a chance to hit an additional time beyond the per-stack bonus. Creates burst windows of multiplicative extra hits."},
+    {name:"Wave Dash (Advance upgrade)",desc:"Advance with Wave Dash generates 1 Resolve stack per meter dashed — keeps Resolve topped off for defensive uses while providing Fervor refresh simultaneously."}
+  ],
+  paragonBoards:[
+    {name:"Starting Board",order:1,primary:true,legendaryNode:{name:"Castle",type:"Legendary",desc:"Armor to damage. Stack Armor — especially important for melee Zealot builds that take more hits at close range."},glyphs:[{name:"Exploit",lvlReq:15,desc:"Vulnerable damage bonus."},{name:"Territorial",lvlReq:15,desc:"Close range bonus — Zenith is always at close range."}],keyNodes:[{name:"Whale",type:"Rare",desc:"Critical Strike nodes."},{name:"Surgical",type:"Rare",desc:"Critical Strike Chance nodes."}]},
+    {name:"Fervent",order:2,primary:false,legendaryNode:{name:"Fervent",type:"Legendary",desc:"Fervor generation and Fervor damage bonuses. The dedicated Zealot board."},glyphs:[{name:"Control",lvlReq:15,desc:"Damage vs CC'd enemies — Advance can CC."},{name:"Canny",lvlReq:46,desc:"Bonus damage at full resource."}],keyNodes:[{name:"Blurring",type:"Rare",desc:"Attack speed nodes."},{name:"Fencing",type:"Rare",desc:"Additional attack speed."}]},
+    {name:"Endure",order:3,primary:false,legendaryNode:{name:"Endure",type:"Legendary",desc:"Survivability board — melee Zealot takes sustained damage at close range."},glyphs:[{name:"Revenge",lvlReq:15,desc:"Damage boost after being hit — very frequent at melee range."},{name:"Indomitable",lvlReq:46,desc:"Damage reduction while Fortified."}],keyNodes:[{name:"Tenacity",type:"Rare",desc:"Damage Reduction while Fortified."},{name:"Bolster",type:"Rare",desc:"Fortify generation."}]}
+  ],
+  goalAffixes:[
+    {slot:"Helm",affixes:["Maximum Life","Armor","Cooldown Reduction","Attack Speed"]},
+    {slot:"Chest",affixes:["Maximum Life","Armor","Resistances","Cooldown Reduction"]},
+    {slot:"Gloves",affixes:["Attack Speed","Critical Strike Chance","Zenith Damage (Temper)","En Garde (Temper)"]},
+    {slot:"Pants",affixes:["Maximum Life","Armor","Resistance","Attack Speed"]},
+    {slot:"Boots",affixes:["Movement Speed","Attack Speed","Cooldown Reduction","Resistance"]},
+    {slot:"Amulet",affixes:["Attack Speed","Skill Ranks to Zenith","Critical Strike Damage","Cooldown Reduction"]},
+    {slot:"Rings",affixes:["Attack Speed","Critical Strike Chance","Critical Strike Damage","Damage to Close Enemies"]},
+    {slot:"Weapon",affixes:["Critical Strike Damage","Attack Speed","Strength","Zenith Damage (Temper)"]},
+    {slot:"Shield",affixes:["Block Chance","Armor","Attack Speed","Strength"]}
+  ]
+},
+"blessed-shield-icyveins":{
+  oath:{name:"Juggernaut Oath",desc:"Casting a Juggernaut Skill consumes 8 Resolve stacks, dealing increased damage and increasing size for 5 seconds. Resolve is no longer lost when hit (only when consuming), raising the maximum Resolve limit and making Juggernaut the most durable Oath. Blessed Shield is the Juggernaut Core Skill that triggers this, and each throw procs Thorns explosions on every enemy it passes through."},
+  skillTree:[
+    {name:"Blessed Shield",type:"Core",rank:"5/5",desc:"'Captain America' shield throw — ricochets between enemies, procs Thorns explosion on each hit."},
+    {name:"Advance",type:"Basic",rank:"5/5",desc:"Wave Dash — generates Resolve stacks per meter dashed. Essential for Juggernaut cycling."},
+    {name:"Fortress",type:"Utility",rank:"1/5",desc:"Massive survivability cooldown. Use on dangerous affix ground."},
+    {name:"Defiance Aura",type:"Utility",rank:"1/5",desc:"Passive armor and Unstoppable."},
+    {name:"Consecration",type:"Utility",rank:"1/5",desc:"Area damage amp. Always cast before engaging packs."},
+    {name:"Rally",type:"Basic",rank:"1/5",desc:"Faith recovery and Resolve refresh."},
+    {name:"Juggernaut's Might",type:"Passive",rank:"3/3",desc:"Resolve stacks grant increased damage — core to Juggernaut Oath cycling."},
+    {name:"Retribution",type:"Passive",rank:"3/3",desc:"Thorns pulse on block — each Block creates an AoE Thorns explosion."},
+    {name:"The Best Offense",type:"Passive",rank:"3/3",desc:"Fortify grants damage."},
+    {name:"Verdant Restoration",type:"Passive",rank:"3/3",desc:"Thorns ticks restore Faith — Blessed Shield explosions fully fund the build's resources."}
+  ],
+  keystones:[
+    {name:"S12 Bugfix",desc:"Season 12 fixed Blessed Shield so it finally receives the full Thorns bonus on attacks. This is the first season Blessed Shield reaches its full intended power — Thorns scaling is dramatically more effective than in previous seasons."},
+    {name:"Clash",desc:"On Block, gain Clash buff — increases Block Chance and Thorns simultaneously. This is what makes Thorns explosive at scale. Never let Clash fall off."}
+  ],
+  paragonBoards:[
+    {name:"Starting Board",order:1,primary:true,legendaryNode:{name:"Castle",type:"Legendary",desc:"Armor to damage scaling. Icy Veins recommends Elixir of Iron Barbs II specifically — it increases Armor (boosting Castle) and Thorns (boosting Blessed Shield explosions) simultaneously."},glyphs:[{name:"Indomitable",lvlReq:15,desc:"Damage reduction while Fortified — constant Fortify from blocking."},{name:"Territorial",lvlReq:15,desc:"Close range bonus."}],keyNodes:[{name:"Spiked Shield",type:"Rare",desc:"Thorns and Block Chance — directly scales both Blessed Shield damage and survivability."},{name:"Stalwart",type:"Rare",desc:"Block Chance nodes."}]},
+    {name:"Shield Bearer",order:2,primary:false,legendaryNode:{name:"Shield Bearer",type:"Legendary",desc:"Block and shield-related damage bonuses. Pairs with Juggernaut Oath's Resolve-based Block interactions."},glyphs:[{name:"Revenge",lvlReq:15,desc:"Damage after being hit — constant at shield-throwing range."},{name:"Control",lvlReq:46,desc:"CC damage bonus — Blessed Shield can stun on hit."}],keyNodes:[{name:"Bodyguard",type:"Rare",desc:"Shield stat nodes."},{name:"Stalwart",type:"Rare",desc:"Block Chance scaling."}]},
+    {name:"Endure",order:3,primary:false,legendaryNode:{name:"Endure",type:"Legendary",desc:"Damage Reduction scaling — important for Juggernaut Paladin that tanks at close range."},glyphs:[{name:"Exploit",lvlReq:15,desc:"Vulnerable damage bonus."},{name:"Canny",lvlReq:46,desc:"Bonus damage at full Faith."}],keyNodes:[{name:"Tenacity",type:"Rare",desc:"Damage Reduction while Fortified."},{name:"Bolster",type:"Rare",desc:"Fortify generation."}]}
+  ],
+  goalAffixes:[
+    {slot:"Helm",affixes:["Maximum Life","Armor","Cooldown Reduction","Strength"]},
+    {slot:"Chest",affixes:["Armor","Maximum Life","Resistances","Thorns"]},
+    {slot:"Gloves",affixes:["Attack Speed","Critical Strike Chance","En Garde (Temper)","Blessed Shield Size (Temper)"]},
+    {slot:"Pants",affixes:["Maximum Life","Armor","Resistance","Thorns"]},
+    {slot:"Boots",affixes:["Movement Speed","Cooldown Reduction","Resistance","Armor"]},
+    {slot:"Amulet",affixes:["Cooldown Reduction","Thorns","Skill Ranks to Blessed Shield","Resistance"]},
+    {slot:"Rings",affixes:["Thorns","Block Chance","Critical Strike Chance","Cooldown Reduction"]},
+    {slot:"Weapon",affixes:["Critical Strike Damage","Strength","Thorns","Cooldown Reduction"]},
+    {slot:"Shield",affixes:["Block Chance","Armor (for Castle + Herald)","Thorns","Strength"]}
+  ]
+},
+"fist-heavens-icyveins":{
+  oath:{name:"Judicator Oath",desc:"Icy Veins' Fist build uses Judicator Oath to ensure both Fist of the Heavens and its secondary arcs interact fully with Judgement marks. The build is structured around a clear cooldown rhythm: Fist is the burst window, Blessed Hammer + Spear fills cooldown gaps, and everything culminates in Seal of the Second Trumpet double-firing every detonation."},
+  skillTree:[
+    {name:"Fist of the Heavens",type:"Core",rank:"5/5",desc:"Primary burst AoE — holy lightning bolt with chaining secondary arcs, each detonating Judgement."},
+    {name:"Blessed Hammer",type:"Core",rank:"3/5",desc:"Cooldown filler — applies and detonates Judgement marks between Fist casts."},
+    {name:"Spear of the Heavens",type:"Core",rank:"1/5",desc:"Boss setup — permanent Judgement vessel. Hit with Fist for simultaneous multi-detonation."},
+    {name:"Arbiter of Justice",type:"Ultimate",rank:"1/1",desc:"Passive Wing Strike Judgement application. Maintain uptime between Fist casts."},
+    {name:"Defiance Aura",type:"Utility",rank:"1/5",desc:"Passive armor and Unstoppable."},
+    {name:"Consecration",type:"Utility",rank:"1/5",desc:"Damage amp before each major Fist cast."},
+    {name:"Judgement Day",type:"Passive",rank:"1/1",desc:"KEYSTONE — Each Fist arc triggers Judgement Day, spreading marks exponentially."},
+    {name:"Proselytizing",type:"Passive",rank:"3/3",desc:"Judicator damage multiplier."},
+    {name:"Divine Fury",type:"Passive",rank:"3/3",desc:"Heaven-skill damage bonus."},
+    {name:"The Best Offense",type:"Passive",rank:"3/3",desc:"Fortify grants damage."}
+  ],
+  keystones:[
+    {name:"Judgement Day",desc:"Each secondary arc from Fist of the Heavens triggers Judgement Day independently. A fully spread pack can have every enemy marked and detonating within a single Fist cast animation."},
+    {name:"Seal of the Second Trumpet interaction",desc:"With Seal of the Second Trumpet, each Judgement triggered by a Fist arc fires twice. Combined with Judgement Day spreading, a single Fist cast can produce dozens of double-firing explosions across an entire screen."}
+  ],
+  paragonBoards:[
+    {name:"Starting Board",order:1,primary:true,legendaryNode:{name:"Castle",type:"Legendary",desc:"Armor to damage scaling — standard Paladin Castle setup."},glyphs:[{name:"Exploit",lvlReq:15,desc:"Vulnerable damage."},{name:"Canny",lvlReq:46,desc:"Bonus damage at high Faith."}],keyNodes:[{name:"Anointed",type:"Rare",desc:"Holy damage for Fist's lightning."},{name:"Strength",type:"Rare",desc:"Armor and damage."}]},
+    {name:"Sentencing",order:2,primary:false,legendaryNode:{name:"Sentencing",type:"Legendary",desc:"Judgement explosion size — each Fist arc covers more area per explosion."},glyphs:[{name:"Judicator",lvlReq:15,desc:"Primary Judicator glyph."},{name:"Territorial",lvlReq:46,desc:"Close range bonus."}],keyNodes:[{name:"Benediction",type:"Rare",desc:"Judgement damage."},{name:"Wrathful",type:"Rare",desc:"Holy damage scaling."}]},
+    {name:"Beacon",order:3,primary:false,legendaryNode:{name:"Beacon",type:"Legendary",desc:"CDR and Holy damage — more Fist casts and higher arc damage per cast."},glyphs:[{name:"Revenge",lvlReq:15,desc:"Passive damage boost."},{name:"Indomitable",lvlReq:46,desc:"Survivability while Fortified."}],keyNodes:[{name:"Luminous",type:"Rare",desc:"Holy damage."},{name:"Radiance",type:"Rare",desc:"Additional Holy scaling."}]}
+  ],
+  goalAffixes:[
+    {slot:"Helm",affixes:["Cooldown Reduction","Maximum Life","Strength","Armor"]},
+    {slot:"Chest",affixes:["Maximum Life","Armor","Resistances","Cooldown Reduction"]},
+    {slot:"Gloves",affixes:["Critical Strike Chance","Attack Speed","En Garde (Temper)","Fist of the Heavens Size (Temper)"]},
+    {slot:"Pants",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"]},
+    {slot:"Boots",affixes:["Movement Speed","Cooldown Reduction","Resistance","Strength"]},
+    {slot:"Amulet",affixes:["Cooldown Reduction","Fist of the Heavens Damage (Temper)","Critical Strike Damage","Resistance"]},
+    {slot:"Rings",affixes:["Critical Strike Chance","Critical Strike Damage","Cooldown Reduction","Vulnerable Damage"]},
+    {slot:"Weapon",affixes:["Critical Strike Damage","Cooldown Reduction","Strength","Fist of the Heavens Damage (Temper)"]},
+    {slot:"Shield",affixes:["Block Chance","Armor","Cooldown Reduction","Strength"]}
+  ]
+}
+};
 
+// Merge extra data
+BUILDS.forEach(b => {
+  const e = EXTRA_DATA[b.id];
+  if (e) { b.oath = e.oath; b.skillTree = e.skillTree; b.keystones = e.keystones; b.paragonBoards = e.paragonBoards; b.goalAffixes = e.goalAffixes; }
+});
+
+function renderSkillTab(b) {
+  const st = b.skillTree || [];
+  const ks = b.keystones || [];
+  const oath = b.oath;
+  return `
+    ${oath ? `<div class="oath-card"><div class="oath-name">${oath.name}</div><div class="oath-desc">${oath.desc}</div></div>` : ''}
+    <div class="skilltree-grid">
+      <div>
+        <div class="st-section-hd">Active skills &amp; passives</div>
+        <div class="skill-tree-list">
+          ${st.map(s => `
+            <div class="st-row">
+              <div class="st-cell st-rank">${s.rank}</div>
+              <div class="st-cell">
+                <div class="st-name">${s.name} <span class="st-type stt-${s.type}">${s.type}</span></div>
+                <div class="st-desc">${s.desc}</div>
+              </div>
+              <div class="st-cell st-pts">${s.rank}</div>
+            </div>`).join('')}
+        </div>
+      </div>
+      <div>
+        <div class="st-section-hd">Key keystones &amp; interactions</div>
+        <div class="keystones-list">
+          ${ks.map(k => `
+            <div class="keystone-card">
+              <div class="keystone-name">${k.name}</div>
+              <div class="keystone-desc">${k.desc}</div>
+            </div>`).join('')}
+        </div>
+      </div>
+    </div>`;
+}
+
+// ── SLOT GEAR DATA — one aspect + 4 affixes per slot, 10 slots per build ──
+const SLOT_GEAR = {
+"judgement-maxroll":[
+  {slot:"Helm",aspect:"Judicant's Glaivehelm",aspectNote:"Unique — BiS",affixes:[{n:"Cooldown Reduction"},{n:"Maximum Life",up:true},{n:"Strength"},{n:"Fire Resistance"}]},
+  {slot:"Chest",aspect:"Aspect of Celestial Strife",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Resistances"},{n:"Cooldown Reduction"}]},
+  {slot:"Gloves",aspect:"—",affixes:[{n:"Attack Speed"},{n:"Critical Strike Chance"},{n:"En Garde",tag:"Temper"},{n:"Judgement Size",tag:"Temper"}]},
+  {slot:"Pants",aspect:"Bulwark's Aspect",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Resistance"},{n:"Cooldown Reduction"}]},
+  {slot:"Boots",aspect:"Arbiter's Zephyr",affixes:[{n:"Movement Speed"},{n:"Cooldown Reduction"},{n:"Attacks Reduce Evade CD",tag:"Temper"},{n:"Resistance"}]},
+  {slot:"Weapon",aspect:"Aspect of Ascension",affixes:[{n:"Critical Strike Damage"},{n:"Strength"},{n:"Cooldown Reduction"},{n:"Vulnerable Damage"}]},
+  {slot:"Amulet",aspect:"Aspect of Golden Hour",affixes:[{n:"Cooldown Reduction"},{n:"Critical Strike Damage"},{n:"Skill Ranks — Blessed Hammer"},{n:"Resistance"}]},
+  {slot:"Ring 1",aspect:"Seal of the Second Trumpet",aspectNote:"Unique — BiS",affixes:[{n:"Critical Strike Chance"},{n:"Critical Strike Damage"},{n:"Cooldown Reduction"},{n:"Vulnerable Damage"}]},
+  {slot:"Ring 2",aspect:"Aspect of the Judicator",affixes:[{n:"Critical Strike Chance"},{n:"Critical Strike Damage"},{n:"Cooldown Reduction"},{n:"Damage to Close Enemies"}]},
+  {slot:"Shield",aspect:"Exaltation",aspectNote:"Unique",affixes:[{n:"Block Chance"},{n:"Armor"},{n:"Strength"},{n:"Cooldown Reduction"}]}
+],
+"wing-strikes-maxroll":[
+  {slot:"Helm",aspect:"Judicant's Glaivehelm",aspectNote:"Unique",affixes:[{n:"Cooldown Reduction"},{n:"Maximum Life"},{n:"Strength"},{n:"Armor"}]},
+  {slot:"Chest",aspect:"Aspect of the Disciple",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Resistances"},{n:"Cooldown Reduction"}]},
+  {slot:"Gloves",aspect:"—",affixes:[{n:"Attack Speed"},{n:"Critical Strike Chance"},{n:"Arbiter Duration",tag:"Temper"},{n:"En Garde",tag:"Temper"}]},
+  {slot:"Pants",aspect:"Aspect of Ascension",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Resistance"},{n:"Cooldown Reduction"}]},
+  {slot:"Boots",aspect:"Aspect of Bounding Stride",affixes:[{n:"Movement Speed"},{n:"Cooldown Reduction"},{n:"Resistance"},{n:"Strength"}]},
+  {slot:"Weapon",aspect:"Griswold's Opus",aspectNote:"Unique — BiS",affixes:[{n:"Critical Strike Damage"},{n:"Strength"},{n:"Cooldown Reduction"},{n:"Attack Speed"}]},
+  {slot:"Amulet",aspect:"Aspect of Celestial Strife",affixes:[{n:"Cooldown Reduction"},{n:"Skill Ranks — Falling Star"},{n:"Critical Strike Damage"},{n:"Resistance"}]},
+  {slot:"Ring 1",aspect:"Aspect of Inner Calm",affixes:[{n:"Cooldown Reduction"},{n:"Critical Strike Chance"},{n:"Critical Strike Damage"},{n:"Damage to Close Enemies"}]},
+  {slot:"Ring 2",aspect:"Edgemaster's Aspect",affixes:[{n:"Cooldown Reduction"},{n:"Critical Strike Chance"},{n:"Critical Strike Damage"},{n:"Armor"}]},
+  {slot:"Shield",aspect:"Herald of Zakarum",aspectNote:"Unique — BiS",affixes:[{n:"Block Chance"},{n:"Armor"},{n:"Strength"},{n:"Cooldown Reduction"}]}
+],
+"shield-retribution-maxroll":[
+  {slot:"Helm",aspect:"—",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Cooldown Reduction"},{n:"Strength"}]},
+  {slot:"Chest",aspect:"Bulwark's Aspect",affixes:[{n:"Armor"},{n:"Maximum Life"},{n:"Resistances"},{n:"Thorns"}]},
+  {slot:"Gloves",aspect:"—",affixes:[{n:"Attack Speed"},{n:"Thorns"},{n:"En Garde",tag:"Temper"},{n:"Critical Strike Chance"}]},
+  {slot:"Pants",aspect:"Aspect of the Umbral",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Resistance"},{n:"Thorns"}]},
+  {slot:"Boots",aspect:"Aspect of Swiftness",affixes:[{n:"Movement Speed"},{n:"Cooldown Reduction"},{n:"Resistance"},{n:"Armor"}]},
+  {slot:"Weapon",aspect:"Griswold's Opus",aspectNote:"Unique",affixes:[{n:"Critical Strike Damage"},{n:"Strength"},{n:"Thorns"},{n:"Cooldown Reduction"}]},
+  {slot:"Amulet",aspect:"Aspect of the Juggernaut",affixes:[{n:"Cooldown Reduction"},{n:"Thorns"},{n:"Skill Ranks — Shield of Retribution"},{n:"Resistance"}]},
+  {slot:"Ring 1",aspect:"Aspect of Retribution",affixes:[{n:"Thorns"},{n:"Block Chance"},{n:"Critical Strike Chance"},{n:"Cooldown Reduction"}]},
+  {slot:"Ring 2",aspect:"Edgemaster's Aspect",affixes:[{n:"Thorns"},{n:"Critical Strike Chance"},{n:"Cooldown Reduction"},{n:"Damage to Close Enemies"}]},
+  {slot:"Shield",aspect:"Ward of the White Dove",aspectNote:"Unique — BiS",affixes:[{n:"Block Chance"},{n:"Armor"},{n:"Thorns"},{n:"Strength"}]}
+],
+"blessed-hammer-maxroll":[
+  {slot:"Helm",aspect:"Aspect of Glynn's Anvil",affixes:[{n:"Cooldown Reduction"},{n:"Maximum Life"},{n:"Strength"},{n:"Armor"}]},
+  {slot:"Chest",aspect:"Aspect of Celestial Strife",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Resistances"},{n:"Cooldown Reduction"}]},
+  {slot:"Gloves",aspect:"—",affixes:[{n:"Attack Speed"},{n:"Critical Strike Chance"},{n:"En Garde",tag:"Temper"},{n:"Blessed Hammer Size",tag:"Temper"}]},
+  {slot:"Pants",aspect:"Bulwark's Aspect",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Resistance"},{n:"Cooldown Reduction"}]},
+  {slot:"Boots",aspect:"Aspect of Swiftness",affixes:[{n:"Movement Speed"},{n:"Cooldown Reduction"},{n:"Resistance"},{n:"Strength"}]},
+  {slot:"Weapon",aspect:"Herald's Morningstar",aspectNote:"Unique — BiS",affixes:[{n:"Critical Strike Damage"},{n:"Attack Speed"},{n:"Strength"},{n:"Blessed Hammer Damage",tag:"Temper"}]},
+  {slot:"Amulet",aspect:"Aspect of Golden Hour",affixes:[{n:"Cooldown Reduction"},{n:"Skill Ranks — Blessed Hammer"},{n:"Critical Strike Damage"},{n:"Resistance"}]},
+  {slot:"Ring 1",aspect:"Aspect of the Judicator",affixes:[{n:"Critical Strike Chance"},{n:"Critical Strike Damage"},{n:"Cooldown Reduction"},{n:"Judicator Damage",tag:"Temper"}]},
+  {slot:"Ring 2",aspect:"Edgemaster's Aspect",affixes:[{n:"Critical Strike Chance"},{n:"Critical Strike Damage"},{n:"Cooldown Reduction"},{n:"Vulnerable Damage"}]},
+  {slot:"Shield",aspect:"Herald of Zakarum",aspectNote:"Unique",affixes:[{n:"Block Chance"},{n:"Armor"},{n:"Strength"},{n:"Cooldown Reduction"}]}
+],
+"fist-heavens-maxroll":[
+  {slot:"Helm",aspect:"Judicant's Glaivehelm",aspectNote:"Unique — BiS",affixes:[{n:"Cooldown Reduction"},{n:"Maximum Life"},{n:"Strength"},{n:"Armor"}]},
+  {slot:"Chest",aspect:"Aspect of Golden Hour",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Resistances"},{n:"Cooldown Reduction"}]},
+  {slot:"Gloves",aspect:"—",affixes:[{n:"Critical Strike Chance"},{n:"Attack Speed"},{n:"En Garde",tag:"Temper"},{n:"Fist of the Heavens Size",tag:"Temper"}]},
+  {slot:"Pants",aspect:"Aspect of Celestial Strife",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Resistance"},{n:"Cooldown Reduction"}]},
+  {slot:"Boots",aspect:"Aspect of Bounding Stride",affixes:[{n:"Movement Speed"},{n:"Cooldown Reduction"},{n:"Resistance"},{n:"Strength"}]},
+  {slot:"Weapon",aspect:"Aspect of Divine Wrath",affixes:[{n:"Critical Strike Damage"},{n:"Cooldown Reduction"},{n:"Strength"},{n:"FotH Damage",tag:"Temper"}]},
+  {slot:"Amulet",aspect:"Aspect of Ascension",affixes:[{n:"Cooldown Reduction"},{n:"FotH Damage",tag:"Temper"},{n:"Critical Strike Damage"},{n:"Resistance"}]},
+  {slot:"Ring 1",aspect:"Seal of the Second Trumpet",aspectNote:"Unique — BiS",affixes:[{n:"Critical Strike Chance"},{n:"Critical Strike Damage"},{n:"Cooldown Reduction"},{n:"Vulnerable Damage"}]},
+  {slot:"Ring 2",aspect:"Aspect of the Judicator",affixes:[{n:"Critical Strike Chance"},{n:"Critical Strike Damage"},{n:"Cooldown Reduction"},{n:"Damage to Close Enemies"}]},
+  {slot:"Shield",aspect:"Herald of Zakarum",aspectNote:"Unique",affixes:[{n:"Block Chance"},{n:"Armor"},{n:"Cooldown Reduction"},{n:"Strength"}]}
+],
+"auradin-maxroll":[
+  {slot:"Helm",aspect:"Heir of Perdition",aspectNote:"Mythic — Chase",affixes:[{n:"Cooldown Reduction"},{n:"Maximum Life"},{n:"Attack Speed"},{n:"Armor"}]},
+  {slot:"Chest",aspect:"Aspect of the Disciple",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Resistances"},{n:"Cooldown Reduction"}]},
+  {slot:"Gloves",aspect:"Dawnfire",aspectNote:"Unique — Required",affixes:[{n:"Attack Speed"},{n:"Fire Damage"},{n:"Critical Strike Chance"},{n:"Cooldown Reduction"}]},
+  {slot:"Pants",aspect:"Aspect of Inner Calm",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Resistance"},{n:"Cooldown Reduction"}]},
+  {slot:"Boots",aspect:"Aspect of Bounding Stride",affixes:[{n:"Movement Speed"},{n:"Attack Speed"},{n:"Cooldown Reduction"},{n:"Resistance"}]},
+  {slot:"Weapon",aspect:"Aspect of Celestial Strife",affixes:[{n:"Attack Speed"},{n:"Critical Strike Damage"},{n:"Cooldown Reduction"},{n:"Strength"}]},
+  {slot:"Amulet",aspect:"Aspect of Ascension",affixes:[{n:"Cooldown Reduction"},{n:"Attack Speed"},{n:"Critical Strike Damage"},{n:"Resistance"}]},
+  {slot:"Ring 1",aspect:"Edgemaster's Aspect",affixes:[{n:"Attack Speed"},{n:"Critical Strike Chance"},{n:"Fire Damage"},{n:"Cooldown Reduction"}]},
+  {slot:"Ring 2",aspect:"Aspect of Concentration",affixes:[{n:"Attack Speed"},{n:"Critical Strike Chance"},{n:"Cooldown Reduction"},{n:"Armor"}]},
+  {slot:"Shield",aspect:"Herald of Zakarum",aspectNote:"Unique",affixes:[{n:"Block Chance"},{n:"Armor"},{n:"Cooldown Reduction"},{n:"Strength"}]}
+],
+"brandish-maxroll":[
+  {slot:"Helm",aspect:"—",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Cooldown Reduction"},{n:"Strength"}]},
+  {slot:"Chest",aspect:"Aspect of Retribution",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Resistances"},{n:"Cooldown Reduction"}]},
+  {slot:"Gloves",aspect:"—",affixes:[{n:"Attack Speed"},{n:"Critical Strike Chance"},{n:"Brandish Damage",tag:"Temper"},{n:"En Garde",tag:"Temper"}]},
+  {slot:"Pants",aspect:"Edgemaster's Aspect",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Resistance"},{n:"Attack Speed"}]},
+  {slot:"Boots",aspect:"Aspect of Swiftness",affixes:[{n:"Movement Speed"},{n:"Cooldown Reduction"},{n:"Resistance"},{n:"Attack Speed"}]},
+  {slot:"Weapon",aspect:"Griswold's Opus",aspectNote:"Unique — BiS",affixes:[{n:"Critical Strike Damage"},{n:"Attack Speed"},{n:"Strength"},{n:"Brandish Damage",tag:"Temper"}]},
+  {slot:"Amulet",aspect:"Aspect of the Zealot",affixes:[{n:"Cooldown Reduction"},{n:"Skill Ranks — Brandish"},{n:"Critical Strike Damage"},{n:"Attack Speed"}]},
+  {slot:"Ring 1",aspect:"Aspect of Inner Calm",affixes:[{n:"Attack Speed"},{n:"Critical Strike Chance"},{n:"Critical Strike Damage"},{n:"Damage to Close Enemies"}]},
+  {slot:"Ring 2",aspect:"Aspect of Celestial Strife",affixes:[{n:"Attack Speed"},{n:"Critical Strike Chance"},{n:"Cooldown Reduction"},{n:"Armor"}]},
+  {slot:"Shield",aspect:"Herald of Zakarum",aspectNote:"Unique",affixes:[{n:"Block Chance"},{n:"Armor"},{n:"Attack Speed"},{n:"Strength"}]}
+],
+"support-maxroll":[
+  {slot:"Helm",aspect:"Heir of Perdition",aspectNote:"Mythic — Situational",affixes:[{n:"Cooldown Reduction"},{n:"Maximum Life"},{n:"Armor"},{n:"Resistance"}]},
+  {slot:"Chest",aspect:"Undying",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Resistances"},{n:"Cooldown Reduction"}]},
+  {slot:"Gloves",aspect:"—",affixes:[{n:"Cooldown Reduction"},{n:"Attack Speed"},{n:"En Garde",tag:"Temper"},{n:"Healing Given",tag:"Temper"}]},
+  {slot:"Pants",aspect:"Aspect of the Protector",affixes:[{n:"Maximum Life"},{n:"Armor"},{n:"Resistance"},{n:"Cooldown Reduction"}]},
+  {slot:"Boots",aspect:"Aspect of Bounding Stride",affixes:[{n:"Movement Speed"},{n:"Cooldown Reduction"},{n:"Resistance"},{n:"Maximum Life"}]},
+  {slot:"Weapon",aspect:"Aspect of Tyrael's Jurisdiction",affixes:[{n:"Cooldown Reduction"},{n:"Strength"},{n:"Maximum Life"},{n:"Armor"}]},
+  {slot:"Amulet",aspect:"Aspect of Edgemaster's",affixes:[{n:"Cooldown Reduction"},{n:"Skill Ranks — Spear of the Heavens"},{n:"Maximum Life"},{n:"Resistance"}]},
+  {slot:"Ring 1",aspect:"Aspect of Concentration",affixes:[{n:"Cooldown Reduction"},{n:"Maximum Life"},{n:"Healing Given"},{n:"Resistance"}]},
+  {slot:"Ring 2",aspect:"Edgemaster's Aspect",affixes:[{n:"Cooldown Reduction"},{n:"Maximum Life"},{n:"Armor"},{n:"Resistance"}]},
+  {slot:"Shield",aspect:"Herald of Zakarum",aspectNote:"Unique",affixes:[{n:"Block Chance"},{n:"Armor"},{n:"Cooldown Reduction"},{n:"Maximum Life"}]}
+],
+"judgement-icyveins":[
+  {slot:"Helm",aspect:"Judicant's Glaivehelm",aspectNote:"Unique",affixes:[{n:"Cooldown Reduction"},{n:"Maximum Life"},{n:"Strength"},{n:"Armor"}]},
+// ── PER-SLOT GEAR (aspect + affixes per slot, 10 slots each) ──
+const SLOT_GEAR = {
+"judgement-maxroll":[
+  {slot:"Helm",icon:"HLM",aspect:"Judicant's Glaivehelm",aspectType:"Unique",affixes:["Cooldown Reduction","Maximum Life","Strength","Armor"],tempers:[]},
+  {slot:"Chest",icon:"CST",aspect:"Aspect of Celestial Strife",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Resistance (Fire/Lightning)"],tempers:[]},
+  {slot:"Gloves",icon:"GLV",aspect:"Aspect of the Judicator",aspectType:"Legendary",affixes:["Attack Speed","Critical Strike Chance"],tempers:["En Garde","Blessed Hammer Size"]},
+  {slot:"Pants",icon:"PNT",aspect:"Aspect of Ascension",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Resistance"],tempers:[]},
+  {slot:"Boots",icon:"BOT",aspect:"Arbiter's Zephyr",aspectType:"Legendary",affixes:["Movement Speed","Cooldown Reduction","Resistance"],tempers:["Attacks Reduce Evade Cooldown"]},
+  {slot:"Weapon",icon:"WPN",aspect:"Griswold's Opus",aspectType:"Unique",affixes:["Critical Strike Damage","Strength","Cooldown Reduction"],tempers:["Vulnerable Damage"]},
+  {slot:"Amulet",icon:"AMU",aspect:"Aspect of Golden Hour",aspectType:"Legendary",affixes:["Cooldown Reduction","Critical Strike Damage","Resistance"],tempers:["Skill Ranks to Arbiter of Justice"]},
+  {slot:"Ring 1",icon:"RNG",aspect:"Seal of the Second Trumpet",aspectType:"Unique",affixes:["Critical Strike Chance","Critical Strike Damage","Cooldown Reduction"],tempers:["Judgement Double Damage"]},
+  {slot:"Ring 2",icon:"RNG",aspect:"Bulwark's Aspect",aspectType:"Legendary",affixes:["Block Chance","Critical Strike Chance","Cooldown Reduction"],tempers:["En Garde"]},
+  {slot:"Shield",icon:"SHD",aspect:"Exaltation",aspectType:"Unique",affixes:["Block Chance","Armor","Strength","Cooldown Reduction"],tempers:[]}
+],
+"wing-strikes-maxroll":[
+  {slot:"Helm",icon:"HLM",aspect:"Judicant's Glaivehelm",aspectType:"Unique",affixes:["Cooldown Reduction","Maximum Life","Strength","Armor"],tempers:[]},
+  {slot:"Chest",icon:"CST",aspect:"Aspect of the Disciple",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Resistance"],tempers:[]},
+  {slot:"Gloves",icon:"GLV",aspect:"Aspect of Celestial Strife",aspectType:"Legendary",affixes:["Attack Speed","Critical Strike Chance"],tempers:["En Garde","Arbiter Duration"]},
+  {slot:"Pants",icon:"PNT",aspect:"Aspect of Ascension",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Resistance"],tempers:[]},
+  {slot:"Boots",icon:"BOT",aspect:"Aspect of Bounding Stride",aspectType:"Legendary",affixes:["Movement Speed","Cooldown Reduction","Resistance","Strength"],tempers:[]},
+  {slot:"Weapon",icon:"WPN",aspect:"Griswold's Opus",aspectType:"Unique",affixes:["Critical Strike Damage","Attack Speed","Cooldown Reduction","Strength"],tempers:[]},
+  {slot:"Amulet",icon:"AMU",aspect:"Aspect of Edgemaster's",aspectType:"Legendary",affixes:["Cooldown Reduction","Critical Strike Damage","Resistance"],tempers:["Skill Ranks to Falling Star"]},
+  {slot:"Ring 1",icon:"RNG",aspect:"Bulwark's Aspect",aspectType:"Legendary",affixes:["Cooldown Reduction","Critical Strike Chance","Damage to Close Enemies"],tempers:["En Garde"]},
+  {slot:"Ring 2",icon:"RNG",aspect:"Aspect of Inner Calm",aspectType:"Legendary",affixes:["Cooldown Reduction","Critical Strike Damage","Strength"],tempers:[]},
+  {slot:"Shield",icon:"SHD",aspect:"Herald of Zakarum",aspectType:"Unique",affixes:["Block Chance","Armor","Strength","Cooldown Reduction"],tempers:[]}
+],
+"shield-retribution-maxroll":[
+  {slot:"Helm",icon:"HLM",aspect:"Aspect of Retribution",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Strength"],tempers:[]},
+  {slot:"Chest",icon:"CST",aspect:"Bulwark's Aspect",aspectType:"Legendary",affixes:["Armor","Maximum Life","Resistance","Thorns"],tempers:[]},
+  {slot:"Gloves",icon:"GLV",aspect:"Aspect of the Juggernaut",aspectType:"Legendary",affixes:["Attack Speed","Thorns"],tempers:["En Garde","Shield of Retribution Size"]},
+  {slot:"Pants",icon:"PNT",aspect:"Aspect of the Umbral",aspectType:"Legendary",affixes:["Maximum Life","Armor","Resistance","Thorns"],tempers:[]},
+  {slot:"Boots",icon:"BOT",aspect:"Aspect of Swiftness",aspectType:"Legendary",affixes:["Movement Speed","Cooldown Reduction","Resistance","Armor"],tempers:[]},
+  {slot:"Weapon",icon:"WPN",aspect:"Griswold's Opus",aspectType:"Unique",affixes:["Critical Strike Damage","Strength","Thorns","Cooldown Reduction"],tempers:[]},
+  {slot:"Amulet",icon:"AMU",aspect:"Aspect of Retribution",aspectType:"Legendary",affixes:["Cooldown Reduction","Thorns","Resistance"],tempers:["Skill Ranks to Shield of Retribution"]},
+  {slot:"Ring 1",icon:"RNG",aspect:"Aspect of Inner Calm",aspectType:"Legendary",affixes:["Thorns","Block Chance","Critical Strike Chance"],tempers:["En Garde"]},
+  {slot:"Ring 2",icon:"RNG",aspect:"Aspect of Edgemaster's",aspectType:"Legendary",affixes:["Thorns","Cooldown Reduction","Damage to Close Enemies"],tempers:[]},
+  {slot:"Shield",icon:"SHD",aspect:"Ward of the White Dove",aspectType:"Unique",affixes:["Block Chance","Armor","Thorns","Strength"],tempers:[]}
+],
+"blessed-hammer-maxroll":[
+  {slot:"Helm",icon:"HLM",aspect:"Judicant's Glaivehelm",aspectType:"Unique",affixes:["Cooldown Reduction","Maximum Life","Strength","Armor"],tempers:[]},
+  {slot:"Chest",icon:"CST",aspect:"Aspect of Golden Hour",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Resistance"],tempers:[]},
+  {slot:"Gloves",icon:"GLV",aspect:"Aspect of Celestial Strife",aspectType:"Legendary",affixes:["Attack Speed","Critical Strike Chance"],tempers:["En Garde","Blessed Hammer Size"]},
+  {slot:"Pants",icon:"PNT",aspect:"Aspect of Ascension",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Resistance"],tempers:[]},
+  {slot:"Boots",icon:"BOT",aspect:"Aspect of Swiftness",aspectType:"Legendary",affixes:["Movement Speed","Cooldown Reduction","Resistance","Strength"],tempers:[]},
+  {slot:"Weapon",icon:"WPN",aspect:"Herald's Morningstar",aspectType:"Unique",affixes:["Critical Strike Damage","Strength","Cooldown Reduction"],tempers:["Blessed Hammer Damage"]},
+  {slot:"Amulet",icon:"AMU",aspect:"Aspect of Glynn's Anvil",aspectType:"Legendary",affixes:["Cooldown Reduction","Critical Strike Damage","Resistance"],tempers:["Skill Ranks to Blessed Hammer"]},
+  {slot:"Ring 1",icon:"RNG",aspect:"Seal of the Second Trumpet",aspectType:"Unique",affixes:["Critical Strike Chance","Critical Strike Damage","Cooldown Reduction"],tempers:["Judicator Damage"]},
+  {slot:"Ring 2",icon:"RNG",aspect:"Bulwark's Aspect",aspectType:"Legendary",affixes:["Block Chance","Cooldown Reduction","Damage to Close Enemies"],tempers:["En Garde"]},
+  {slot:"Shield",icon:"SHD",aspect:"Herald of Zakarum",aspectType:"Unique",affixes:["Block Chance","Armor","Strength","Cooldown Reduction"],tempers:[]}
+],
+"fist-heavens-maxroll":[
+  {slot:"Helm",icon:"HLM",aspect:"Judicant's Glaivehelm",aspectType:"Unique",affixes:["Cooldown Reduction","Maximum Life","Strength","Armor"],tempers:[]},
+  {slot:"Chest",icon:"CST",aspect:"Aspect of Golden Hour",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Resistance"],tempers:[]},
+  {slot:"Gloves",icon:"GLV",aspect:"Aspect of Celestial Strife",aspectType:"Legendary",affixes:["Critical Strike Chance","Attack Speed"],tempers:["En Garde","Fist of the Heavens Size"]},
+  {slot:"Pants",icon:"PNT",aspect:"Aspect of Ascension",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Resistance"],tempers:[]},
+  {slot:"Boots",icon:"BOT",aspect:"Aspect of Bounding Stride",aspectType:"Legendary",affixes:["Movement Speed","Cooldown Reduction","Resistance","Strength"],tempers:[]},
+  {slot:"Weapon",icon:"WPN",aspect:"Aspect of Divine Wrath",aspectType:"Legendary",affixes:["Critical Strike Damage","Cooldown Reduction","Strength"],tempers:["Fist of the Heavens Damage"]},
+  {slot:"Amulet",icon:"AMU",aspect:"Aspect of the Judicator",aspectType:"Legendary",affixes:["Cooldown Reduction","Critical Strike Damage","Resistance"],tempers:["Fist of the Heavens Damage"]},
+  {slot:"Ring 1",icon:"RNG",aspect:"Seal of the Second Trumpet",aspectType:"Unique",affixes:["Critical Strike Chance","Critical Strike Damage","Cooldown Reduction"],tempers:["Vulnerable Damage"]},
+  {slot:"Ring 2",icon:"RNG",aspect:"Bulwark's Aspect",aspectType:"Legendary",affixes:["Block Chance","Cooldown Reduction","Critical Strike Chance"],tempers:["En Garde"]},
+  {slot:"Shield",icon:"SHD",aspect:"Herald of Zakarum",aspectType:"Unique",affixes:["Block Chance","Armor","Strength","Cooldown Reduction"],tempers:[]}
+],
+"auradin-maxroll":[
+  {slot:"Helm",icon:"HLM",aspect:"Aspect of Celestial Strife",aspectType:"Legendary",affixes:["Cooldown Reduction","Attack Speed","Maximum Life","Armor"],tempers:[]},
+  {slot:"Chest",icon:"CST",aspect:"Aspect of the Disciple",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Resistance"],tempers:[]},
+  {slot:"Gloves",icon:"GLV",aspect:"Dawnfire",aspectType:"Unique",affixes:["Attack Speed"],tempers:[]},
+  {slot:"Pants",icon:"PNT",aspect:"Aspect of Inner Calm",aspectType:"Legendary",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"],tempers:[]},
+  {slot:"Boots",icon:"BOT",aspect:"Aspect of Bounding Stride",aspectType:"Legendary",affixes:["Movement Speed","Attack Speed","Cooldown Reduction","Resistance"],tempers:[]},
+  {slot:"Weapon",icon:"WPN",aspect:"Aspect of Concentration",aspectType:"Legendary",affixes:["Attack Speed","Critical Strike Damage","Cooldown Reduction","Strength"],tempers:[]},
+  {slot:"Amulet",icon:"AMU",aspect:"Aspect of Ascension",aspectType:"Legendary",affixes:["Cooldown Reduction","Attack Speed","Critical Strike Damage","Resistance"],tempers:[]},
+  {slot:"Ring 1",icon:"RNG",aspect:"Aspect of Edgemaster's",aspectType:"Legendary",affixes:["Attack Speed","Critical Strike Chance","Fire Damage"],tempers:[]},
+  {slot:"Ring 2",icon:"RNG",aspect:"Aspect of Inner Calm",aspectType:"Legendary",affixes:["Attack Speed","Cooldown Reduction","Critical Strike Chance"],tempers:[]},
+  {slot:"Shield",icon:"SHD",aspect:"Herald of Zakarum",aspectType:"Unique",affixes:["Block Chance","Armor","Cooldown Reduction","Strength"],tempers:[]}
+],
+"brandish-maxroll":[
+  {slot:"Helm",icon:"HLM",aspect:"Aspect of the Zealot",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Attack Speed"],tempers:[]},
+  {slot:"Chest",icon:"CST",aspect:"Aspect of Retribution",aspectType:"Legendary",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"],tempers:[]},
+  {slot:"Gloves",icon:"GLV",aspect:"Aspect of Edgemaster's",aspectType:"Legendary",affixes:["Attack Speed","Critical Strike Chance"],tempers:["Brandish Damage","En Garde"]},
+  {slot:"Pants",icon:"PNT",aspect:"Aspect of Swiftness",aspectType:"Legendary",affixes:["Maximum Life","Armor","Resistance","Attack Speed"],tempers:[]},
+  {slot:"Boots",icon:"BOT",aspect:"Aspect of Bounding Stride",aspectType:"Legendary",affixes:["Movement Speed","Attack Speed","Cooldown Reduction","Resistance"],tempers:[]},
+  {slot:"Weapon",icon:"WPN",aspect:"Griswold's Opus",aspectType:"Unique",affixes:["Critical Strike Damage","Attack Speed","Strength"],tempers:["Brandish Damage"]},
+  {slot:"Amulet",icon:"AMU",aspect:"Aspect of Frenzied Dead",aspectType:"Legendary",affixes:["Cooldown Reduction","Attack Speed","Critical Strike Damage","Resistance"],tempers:["Skill Ranks to Brandish"]},
+  {slot:"Ring 1",icon:"RNG",aspect:"Aspect of Inner Calm",aspectType:"Legendary",affixes:["Attack Speed","Critical Strike Chance","Critical Strike Damage"],tempers:[]},
+  {slot:"Ring 2",icon:"RNG",aspect:"Aspect of Berserk Ripping",aspectType:"Legendary",affixes:["Attack Speed","Cooldown Reduction","Damage to Close Enemies"],tempers:[]},
+  {slot:"Shield",icon:"SHD",aspect:"Herald of Zakarum",aspectType:"Unique",affixes:["Block Chance","Armor","Attack Speed","Strength"],tempers:[]}
+],
+"support-maxroll":[
+  {slot:"Helm",icon:"HLM",aspect:"Aspect of Disobedience",aspectType:"Legendary",affixes:["Cooldown Reduction","Maximum Life","Armor","Resistance"],tempers:[]},
+  {slot:"Chest",icon:"CST",aspect:"Undying",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Resistance"],tempers:[]},
+  {slot:"Gloves",icon:"GLV",aspect:"Aspect of Edgemaster's",aspectType:"Legendary",affixes:["Cooldown Reduction","Attack Speed"],tempers:["En Garde","Healing Given"]},
+  {slot:"Pants",icon:"PNT",aspect:"Aspect of Concentration",aspectType:"Legendary",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"],tempers:[]},
+  {slot:"Boots",icon:"BOT",aspect:"Aspect of Bounding Stride",aspectType:"Legendary",affixes:["Movement Speed","Cooldown Reduction","Resistance","Maximum Life"],tempers:[]},
+  {slot:"Weapon",icon:"WPN",aspect:"Aspect of Tyrael's Jurisdiction",aspectType:"Legendary",affixes:["Cooldown Reduction","Strength","Maximum Life","Armor"],tempers:[]},
+  {slot:"Amulet",icon:"AMU",aspect:"Aspect of the Protector",aspectType:"Legendary",affixes:["Cooldown Reduction","Maximum Life","Resistance"],tempers:["Skill Ranks to Spear of the Heavens"]},
+  {slot:"Ring 1",icon:"RNG",aspect:"Aspect of Inner Calm",aspectType:"Legendary",affixes:["Cooldown Reduction","Maximum Life","Healing Given"],tempers:[]},
+  {slot:"Ring 2",icon:"RNG",aspect:"Aspect of Edgemaster's",aspectType:"Legendary",affixes:["Cooldown Reduction","Maximum Life","Resistance"],tempers:[]},
+  {slot:"Shield",icon:"SHD",aspect:"Herald of Zakarum",aspectType:"Unique",affixes:["Block Chance","Armor","Cooldown Reduction","Maximum Life"],tempers:[]}
+],
+"judgement-icyveins":[
+  {slot:"Helm",icon:"HLM",aspect:"Judicant's Glaivehelm",aspectType:"Unique",affixes:["Cooldown Reduction","Maximum Life","Strength","Armor"],tempers:[]},
+  {slot:"Chest",icon:"CST",aspect:"Aspect of Ascension",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Resistance"],tempers:[]},
+  {slot:"Gloves",icon:"GLV",aspect:"Aspect of Celestial Strife",aspectType:"Legendary",affixes:["Attack Speed","Critical Strike Chance"],tempers:["En Garde","Judgement Double Damage"]},
+  {slot:"Pants",icon:"PNT",aspect:"Bulwark's Aspect",aspectType:"Legendary",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"],tempers:[]},
+  {slot:"Boots",icon:"BOT",aspect:"Aspect of Bounding Stride",aspectType:"Legendary",affixes:["Movement Speed","Cooldown Reduction","Resistance","Strength"],tempers:[]},
+  {slot:"Weapon",icon:"WPN",aspect:"Griswold's Opus",aspectType:"Unique",affixes:["Critical Strike Damage","Strength","Cooldown Reduction"],tempers:["Vulnerable Damage"]},
+  {slot:"Amulet",icon:"AMU",aspect:"Aspect of Golden Hour",aspectType:"Legendary",affixes:["Cooldown Reduction","Critical Strike Damage","Resistance"],tempers:["Arbiter CDR"]},
+  {slot:"Ring 1",icon:"RNG",aspect:"Seal of the Second Trumpet",aspectType:"Unique",affixes:["Critical Strike Chance","Critical Strike Damage","Cooldown Reduction"],tempers:["Judgement Double Damage"]},
+  {slot:"Ring 2",icon:"RNG",aspect:"Aspect of the Judicator",aspectType:"Legendary",affixes:["Block Chance","Critical Strike Chance","Cooldown Reduction"],tempers:["En Garde"]},
+  {slot:"Shield",icon:"SHD",aspect:"Herald of Zakarum",aspectType:"Unique",affixes:["Block Chance","Armor","Strength"],tempers:["En Garde"]}
+],
+"blessed-hammer-icyveins":[
+  {slot:"Helm",icon:"HLM",aspect:"Judicant's Glaivehelm",aspectType:"Unique",affixes:["Cooldown Reduction","Maximum Life","Strength","Armor"],tempers:[]},
+  {slot:"Chest",icon:"CST",aspect:"Aspect of Golden Hour",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Resistance"],tempers:[]},
+  {slot:"Gloves",icon:"GLV",aspect:"Aspect of Celestial Strife",aspectType:"Legendary",affixes:["Attack Speed","Critical Strike Chance"],tempers:["Blessed Hammer Size","En Garde"]},
+  {slot:"Pants",icon:"PNT",aspect:"Aspect of Ascension",aspectType:"Legendary",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"],tempers:[]},
+  {slot:"Boots",icon:"BOT",aspect:"Aspect of Swiftness",aspectType:"Legendary",affixes:["Movement Speed","Cooldown Reduction","Resistance","Strength"],tempers:[]},
+  {slot:"Weapon",icon:"WPN",aspect:"Herald's Morningstar",aspectType:"Unique",affixes:["Critical Strike Damage","Attack Speed","Strength"],tempers:["Blessed Hammer Damage"]},
+  {slot:"Amulet",icon:"AMU",aspect:"Aspect of Glynn's Anvil",aspectType:"Legendary",affixes:["Cooldown Reduction","Critical Strike Damage","Resistance"],tempers:["Skill Ranks to Blessed Hammer"]},
+  {slot:"Ring 1",icon:"RNG",aspect:"Seal of the Second Trumpet",aspectType:"Unique",affixes:["Critical Strike Chance","Critical Strike Damage","Cooldown Reduction"],tempers:["Judicator Damage"]},
+  {slot:"Ring 2",icon:"RNG",aspect:"Bulwark's Aspect",aspectType:"Legendary",affixes:["Block Chance","Cooldown Reduction","Critical Strike Chance"],tempers:["En Garde"]},
+  {slot:"Shield",icon:"SHD",aspect:"Herald of Zakarum",aspectType:"Unique",affixes:["Block Chance","Armor","Cooldown Reduction","Strength"],tempers:[]}
+],
+"auradin-icyveins":[
+  {slot:"Helm",icon:"HLM",aspect:"Aspect of Celestial Strife",aspectType:"Legendary",affixes:["Cooldown Reduction","Attack Speed","Maximum Life","Armor"],tempers:[]},
+  {slot:"Chest",icon:"CST",aspect:"Aspect of the Disciple",aspectType:"Legendary",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"],tempers:[]},
+  {slot:"Gloves",icon:"GLV",aspect:"Dawnfire",aspectType:"Unique",affixes:["Attack Speed"],tempers:[]},
+  {slot:"Pants",icon:"PNT",aspect:"Aspect of Bounding Stride",aspectType:"Legendary",affixes:["Maximum Life","Armor","Resistance","Attack Speed"],tempers:[]},
+  {slot:"Boots",icon:"BOT",aspect:"Aspect of Swiftness",aspectType:"Legendary",affixes:["Movement Speed","Attack Speed","Cooldown Reduction","Resistance"],tempers:[]},
+  {slot:"Weapon",icon:"WPN",aspect:"Aspect of Concentration",aspectType:"Legendary",affixes:["Attack Speed","Critical Strike Damage","Cooldown Reduction","Strength"],tempers:[]},
+  {slot:"Amulet",icon:"AMU",aspect:"Aspect of Ascension",aspectType:"Legendary",affixes:["Cooldown Reduction","Attack Speed","Critical Strike Damage","Resistance"],tempers:[]},
+  {slot:"Ring 1",icon:"RNG",aspect:"Aspect of Inner Calm",aspectType:"Legendary",affixes:["Attack Speed","Critical Strike Chance","Fire Damage"],tempers:[]},
+  {slot:"Ring 2",icon:"RNG",aspect:"Aspect of Edgemaster's",aspectType:"Legendary",affixes:["Attack Speed","Cooldown Reduction","Critical Strike Chance"],tempers:[]},
+  {slot:"Shield",icon:"SHD",aspect:"Herald of Zakarum",aspectType:"Unique",affixes:["Block Chance","Armor","Cooldown Reduction","Strength"],tempers:[]}
+],
+"arbiter-disciple-icyveins":[
+  {slot:"Helm",icon:"HLM",aspect:"Aspect of Disobedience",aspectType:"Legendary",affixes:["Cooldown Reduction","Maximum Life","Strength","Armor"],tempers:[]},
+  {slot:"Chest",icon:"CST",aspect:"Aspect of the Disciple",aspectType:"Legendary",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"],tempers:[]},
+  {slot:"Gloves",icon:"GLV",aspect:"Aspect of Celestial Strife",aspectType:"Legendary",affixes:["Attack Speed","Critical Strike Chance"],tempers:["Arbiter Duration","En Garde"]},
+  {slot:"Pants",icon:"PNT",aspect:"Aspect of Ascension",aspectType:"Legendary",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"],tempers:[]},
+  {slot:"Boots",icon:"BOT",aspect:"Aspect of Bounding Stride",aspectType:"Legendary",affixes:["Movement Speed","Cooldown Reduction","Resistance","Strength"],tempers:[]},
+  {slot:"Weapon",icon:"WPN",aspect:"Griswold's Opus",aspectType:"Unique",affixes:["Critical Strike Damage","Cooldown Reduction","Strength","Attack Speed"],tempers:[]},
+  {slot:"Amulet",icon:"AMU",aspect:"Aspect of Edgemaster's",aspectType:"Legendary",affixes:["Cooldown Reduction","Critical Strike Damage","Resistance"],tempers:["Skill Ranks to Falling Star"]},
+  {slot:"Ring 1",icon:"RNG",aspect:"Bulwark's Aspect",aspectType:"Legendary",affixes:["Cooldown Reduction","Critical Strike Chance","Damage to Close Enemies"],tempers:["En Garde"]},
+  {slot:"Ring 2",icon:"RNG",aspect:"Aspect of Inner Calm",aspectType:"Legendary",affixes:["Cooldown Reduction","Critical Strike Damage","Strength"],tempers:[]},
+  {slot:"Shield",icon:"SHD",aspect:"Herald of Zakarum",aspectType:"Unique",affixes:["Block Chance","Armor","Strength","Cooldown Reduction"],tempers:[]}
+],
+"zealot-icyveins":[
+  {slot:"Helm",icon:"HLM",aspect:"Aspect of the Zealot",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Attack Speed"],tempers:[]},
+  {slot:"Chest",icon:"CST",aspect:"Aspect of Retribution",aspectType:"Legendary",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"],tempers:[]},
+  {slot:"Gloves",icon:"GLV",aspect:"Aspect of Edgemaster's",aspectType:"Legendary",affixes:["Attack Speed","Critical Strike Chance"],tempers:["Zenith Damage","En Garde"]},
+  {slot:"Pants",icon:"PNT",aspect:"Aspect of Swiftness",aspectType:"Legendary",affixes:["Maximum Life","Armor","Resistance","Attack Speed"],tempers:[]},
+  {slot:"Boots",icon:"BOT",aspect:"Aspect of Bounding Stride",aspectType:"Legendary",affixes:["Movement Speed","Attack Speed","Cooldown Reduction","Resistance"],tempers:[]},
+  {slot:"Weapon",icon:"WPN",aspect:"Griswold's Opus",aspectType:"Unique",affixes:["Critical Strike Damage","Attack Speed","Strength"],tempers:["Zenith Damage"]},
+  {slot:"Amulet",icon:"AMU",aspect:"Aspect of the Zealot",aspectType:"Legendary",affixes:["Attack Speed","Critical Strike Damage","Cooldown Reduction","Resistance"],tempers:["Skill Ranks to Zenith"]},
+  {slot:"Ring 1",icon:"RNG",aspect:"Aspect of Inner Calm",aspectType:"Legendary",affixes:["Attack Speed","Critical Strike Chance","Damage to Close Enemies"],tempers:[]},
+  {slot:"Ring 2",icon:"RNG",aspect:"Aspect of Berserk Ripping",aspectType:"Legendary",affixes:["Attack Speed","Cooldown Reduction","Critical Strike Damage"],tempers:[]},
+  {slot:"Shield",icon:"SHD",aspect:"Herald of Zakarum",aspectType:"Unique",affixes:["Block Chance","Armor","Attack Speed","Strength"],tempers:[]}
+],
+"blessed-shield-icyveins":[
+  {slot:"Helm",icon:"HLM",aspect:"Aspect of Disobedience",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Strength"],tempers:[]},
+  {slot:"Chest",icon:"CST",aspect:"Bulwark's Aspect",aspectType:"Legendary",affixes:["Armor","Maximum Life","Resistance","Thorns"],tempers:[]},
+  {slot:"Gloves",icon:"GLV",aspect:"Aspect of Retribution",aspectType:"Legendary",affixes:["Attack Speed","Critical Strike Chance"],tempers:["En Garde","Blessed Shield Size"]},
+  {slot:"Pants",icon:"PNT",aspect:"Aspect of the Umbral",aspectType:"Legendary",affixes:["Maximum Life","Armor","Resistance","Thorns"],tempers:[]},
+  {slot:"Boots",icon:"BOT",aspect:"Aspect of Swiftness",aspectType:"Legendary",affixes:["Movement Speed","Cooldown Reduction","Resistance","Armor"],tempers:[]},
+  {slot:"Weapon",icon:"WPN",aspect:"Griswold's Opus",aspectType:"Unique",affixes:["Critical Strike Damage","Strength","Thorns","Cooldown Reduction"],tempers:[]},
+  {slot:"Amulet",icon:"AMU",aspect:"Aspect of the Juggernaut",aspectType:"Legendary",affixes:["Cooldown Reduction","Thorns","Resistance"],tempers:["Skill Ranks to Blessed Shield"]},
+  {slot:"Ring 1",icon:"RNG",aspect:"Aspect of Inner Calm",aspectType:"Legendary",affixes:["Thorns","Block Chance","Critical Strike Chance"],tempers:["En Garde"]},
+  {slot:"Ring 2",icon:"RNG",aspect:"Aspect of Edgemaster's",aspectType:"Legendary",affixes:["Thorns","Cooldown Reduction","Critical Strike Damage"],tempers:[]},
+  {slot:"Shield",icon:"SHD",aspect:"Herald of Zakarum",aspectType:"Unique",affixes:["Block Chance","Armor","Strength"],tempers:["En Garde"]}
+],
+"fist-heavens-icyveins":[
+  {slot:"Helm",icon:"HLM",aspect:"Judicant's Glaivehelm",aspectType:"Unique",affixes:["Cooldown Reduction","Maximum Life","Strength","Armor"],tempers:[]},
+  {slot:"Chest",icon:"CST",aspect:"Aspect of Golden Hour",aspectType:"Legendary",affixes:["Maximum Life","Armor","Cooldown Reduction","Resistance"],tempers:[]},
+  {slot:"Gloves",icon:"GLV",aspect:"Aspect of Celestial Strife",aspectType:"Legendary",affixes:["Critical Strike Chance","Attack Speed"],tempers:["En Garde","Fist of the Heavens Size"]},
+  {slot:"Pants",icon:"PNT",aspect:"Aspect of Ascension",aspectType:"Legendary",affixes:["Maximum Life","Armor","Resistance","Cooldown Reduction"],tempers:[]},
+  {slot:"Boots",icon:"BOT",aspect:"Aspect of Bounding Stride",aspectType:"Legendary",affixes:["Movement Speed","Cooldown Reduction","Resistance","Strength"],tempers:[]},
+  {slot:"Weapon",icon:"WPN",aspect:"Aspect of Divine Wrath",aspectType:"Legendary",affixes:["Critical Strike Damage","Cooldown Reduction","Strength"],tempers:["Fist of the Heavens Damage"]},
+  {slot:"Amulet",icon:"AMU",aspect:"Aspect of the Judicator",aspectType:"Legendary",affixes:["Cooldown Reduction","Critical Strike Damage","Resistance"],tempers:["Fist of the Heavens Damage"]},
+  {slot:"Ring 1",icon:"RNG",aspect:"Seal of the Second Trumpet",aspectType:"Unique",affixes:["Critical Strike Chance","Critical Strike Damage","Cooldown Reduction"],tempers:["Vulnerable Damage"]},
+  {slot:"Ring 2",icon:"RNG",aspect:"Bulwark's Aspect",aspectType:"Legendary",affixes:["Block Chance","Cooldown Reduction","Critical Strike Chance"],tempers:["En Garde"]},
+  {slot:"Shield",icon:"SHD",aspect:"Herald of Zakarum",aspectType:"Unique",affixes:["Block Chance","Armor","Cooldown Reduction","Strength"],tempers:[]}
+]
+};
+
+BUILDS.forEach(b => { b.slotGear = SLOT_GEAR[b.id] || []; });
+
+function renderGearSlots(b) {
+  const slots = b.slotGear || [];
+  const callout = b.bisCallout;
+  const bis = b.bisUniques || [];
+  const prog = b.progression || [];
+  const sub = gearSubTab[b.id] || 'slots';
+
+  const calloutHtml = callout ? `<div class="bis-callout" style="margin-bottom:18px;"><div class="bis-icon">★</div><div class="bis-body"><div class="bis-title">Best in slot — ${callout.item}</div><div class="bis-desc">${callout.reason}</div></div></div>` : '';
+
+  const slotsHtml = `
+    ${calloutHtml}
+    <div class="slot-gear-grid">
+      ${slots.map(s => {
+        const isUnique = s.aspectType === 'Unique';
+        const isMythic = s.aspectType === 'Mythic';
+        return `
+          <div class="slot-item-card${isUnique?' slot-unique':''}${isMythic?' slot-mythic':''}">
+            <div class="slot-item-header">
+              <div class="slot-icon">${s.icon}</div>
+              <div class="slot-header-info">
+                <div class="slot-label">${s.slot}</div>
+                <div class="slot-aspect-name">${s.aspect}</div>
+                <span class="slot-aspect-type sat-${s.aspectType}">${s.aspectType}</span>
+              </div>
+            </div>
+            <div class="slot-affixes">
+              ${s.affixes.filter(a=>a&&a!=='—').map((a,i) => `
+                <div class="slot-affix-row">
+                  <span class="slot-affix-num">${i+1}.</span>
+                  <span class="slot-affix-name">${a}</span>
+                </div>`).join('')}
+              ${s.tempers.map(t => `
+                <div class="slot-affix-row slot-temper">
+                  <span class="slot-temper-icon">✦</span>
+                  <span class="slot-affix-name temper-name">${t}</span>
+                </div>`).join('')}
+            </div>
+          </div>`;
+      }).join('')}
+    </div>`;
+
+  const bisHtml = `
+    <div class="unique-grid">
+      ${bis.map(u => `
+        <div class="unique-card${u.bis?' bis':''}${u.mythic?' mythic':''}">
+          <div class="uc-header"><div class="uc-slot-icon">${u.slot.replace(' ','<br>')}</div>
+            <div><div class="uc-name">${u.name}</div><div class="uc-slot-label">${u.slot}</div></div></div>
+          <div class="uc-note">${u.note}</div>
+          <div class="uc-obtain">Obtain: ${u.obtain}</div>
+        </div>`).join('')}
+    </div>`;
+
+  const progHtml = `
+    <div class="prog-grid">
+      <div>
+        <div class="section-hd" style="margin-bottom:12px;">Gear progression path</div>
+        <div class="prog-timeline">${prog.map(p=>`
+          <div class="prog-step${p.key?' key':''}">
+            <div class="prog-dot"></div>
+            <div class="prog-phase">${p.phase}</div>
+            <div class="prog-title">${p.title}</div>
+            <div class="prog-desc">${p.desc}</div>
+            <div class="prog-items">${(p.items||[]).map(i=>`<span class="prog-item${i.includes('Mythic')?' purple':p.key?' gold':''}">${i}</span>`).join('')}</div>
+          </div>`).join('')}
+        </div>
+      </div>
+      <div>
+        <div class="section-hd" style="margin-bottom:12px;">General tips</div>
+        <ul class="tips-list">
+          <li class="tip-li"><span class="tip-icon">▸</span><span style="color:var(--text2)">Gamble the slot type for your BiS Unique at the Obol Vendor — fastest path.</span></li>
+          <li class="tip-li"><span class="tip-icon">▸</span><span style="color:var(--text2)">Imprint Codex aspects immediately — guaranteed without RNG.</span></li>
+          <li class="tip-li"><span class="tip-icon">▸</span><span style="color:var(--text2)">Obol Vendor gear at Torment 1+ is 750+ item power — fill gaps fast.</span></li>
+          <li class="tip-li"><span class="tip-icon">▸</span><span style="color:var(--text2)">✦ Tempers are rolled at the Tempering Shrine — often higher impact than natural rolls.</span></li>
+          <li class="tip-li"><span class="tip-icon">▸</span><span style="color:var(--text2)">Masterwork Crit your primary damage stat first.</span></li>
+          <li class="tip-li"><span class="tip-icon">▸</span><span style="color:var(--text2)">Mythic Uniques drop from Tormented Bosses at Torment 1+. Run daily.</span></li>
+        </ul>
+      </div>
+    </div>`;
+
+  return `
+    <div class="gear-subtabs" id="gsubs-${b.id}">
+      <button class="gear-subtab${sub==='slots'?' active':''}" data-sub="slots" onclick="switchGearSub('${b.id}','slots')">All Slots</button>
+      <button class="gear-subtab${sub==='uniques'?' active':''}" data-sub="uniques" onclick="switchGearSub('${b.id}','uniques')">Uniques &amp; Mythics</button>
+      <button class="gear-subtab${sub==='progression'?' active':''}" data-sub="progression" onclick="switchGearSub('${b.id}','progression')">Progression</button>
+    </div>
+    <div id="gbody-${b.id}">
+      <div class="gear-subpane${sub==='slots'?' active':''}" data-sub="slots">${slotsHtml}</div>
+      <div class="gear-subpane${sub==='uniques'?' active':''}" data-sub="uniques">${bisHtml}</div>
+      <div class="gear-subpane${sub==='progression'?' active':''}" data-sub="progression">${progHtml}</div>
+    </div>`;
+}
+
+function renderDetail(b) {
+  const TABS = ['overview','skills','gear'];
   const r = b.ratings;
   const overviewHtml = `
     <div class="ov-grid">
@@ -1735,68 +2714,24 @@ function renderDetail(b) {
         <div class="playstyle">${b.playstyle}</div>
         <div class="section-hd" style="margin-top:18px;">Pros &amp; cons</div>
         <div class="proscons-grid">
-          <div class="pc-col pc-pro">
-            <div class="pc-title">Strengths</div>
-            <ul class="pc-list">${b.pros.map(p=>`<li class="pc-li"><span class="pc-bullet-pro">+</span>${p}</li>`).join('')}</ul>
-          </div>
-          <div class="pc-col pc-con">
-            <div class="pc-title">Weaknesses</div>
-            <ul class="pc-list">${b.cons.map(c=>`<li class="pc-li"><span class="pc-bullet-con">−</span>${c}</li>`).join('')}</ul>
-          </div>
+          <div class="pc-col pc-pro"><div class="pc-title">Strengths</div>
+            <ul class="pc-list">${b.pros.map(p=>`<li class="pc-li"><span class="pc-bullet-pro">+</span>${p}</li>`).join('')}</ul></div>
+          <div class="pc-col pc-con"><div class="pc-title">Weaknesses</div>
+            <ul class="pc-list">${b.cons.map(c=>`<li class="pc-li"><span class="pc-bullet-con">−</span>${c}</li>`).join('')}</ul></div>
         </div>
       </div>
       <div>
         <div class="section-hd">Core loop</div>
         <ul class="loop-list">${b.coreLoop.map(s=>`
-          <li class="loop-li">
-            <span class="loop-n">${s.step}</span>
+          <li class="loop-li"><span class="loop-n">${s.step}</span>
             <div><span class="loop-t">${s.title}</span><span class="loop-d">${s.desc}</span></div>
           </li>`).join('')}</ul>
       </div>
     </div>`;
-
-  const skillsHtml = `
-    <div class="section-hd">Active skills &amp; passives</div>
-    <div class="skills-grid">${b.skills.map(s=>`
-      <div class="sk-card">
-        <div class="sk-top"><div class="sk-name">${s.name}</div><span class="sk-role role-${s.role}">${s.role}</span></div>
-        <div class="sk-desc">${s.desc}</div>
-      </div>`).join('')}</div>
-    ${b.mechanics.length?`<div class="section-hd" style="margin-top:20px;">Key mechanics</div>
-    <div class="mechs-grid">${b.mechanics.map(m=>`
-      <div class="mech-card"><div class="mech-t">${m.title}</div><div class="mech-d">${m.desc}</div></div>`).join('')}</div>`:''}`;
-
-  const gearHtml = renderGearTab(b);
-
-  const prioW = {Critical:100,'Very High':82,High:64,Medium:46,Low:28};
-  const prioC = {Critical:'#e07070','Very High':'#c9952a',High:'#7db87d',Medium:'#a89878',Low:'#6a5840'};
-  const statsHtml = `
-    <div class="stats-grid">
-      <div>
-        <div class="section-hd">Stat priorities</div>
-        ${b.statPriorities.map(s=>{const k=(s.priority||'').replace(/\s+/g,'-');return`
-          <div class="stat-row">
-            <div class="stat-hd"><span class="stat-nm">${s.stat}</span><span class="stat-pr pr-${k}">${s.priority}</span></div>
-            <div class="bar-bg"><div class="bar-fg" style="width:${prioW[s.priority]||46}%;background:${prioC[s.priority]||'#6a5840'};"></div></div>
-          </div>`;}).join('')}
-      </div>
-      <div>
-        <div class="section-hd">Rotation</div>
-        <ul class="rot-list">${b.rotation.map((r,i)=>`
-          <li class="rot-li"><span class="rot-n">${i+1}</span><span class="rot-t">${r}</span></li>`).join('')}</ul>
-      </div>
-    </div>`;
-
-  const variantsHtml = `
-    <div class="section-hd">Build variants</div>
-    <div class="variants-list">${b.variants.map(v=>`
-      <div class="var-card">
-        <div class="var-name">${v.name}${v.recommended?'<span class="var-rec">Recommended</span>':''}</div>
-        <div class="var-desc">${v.desc}</div>
-      </div>`).join('')}</div>`;
-
-  const panelMap = {overview:overviewHtml,skills:skillsHtml,gear:gearHtml,stats:statsHtml,variants:variantsHtml};
-
+  const skillsHtml = renderSkillTab(b);
+  const gearHtml = renderGearSlots(b);
+  const panelMap = {overview:overviewHtml, skills:skillsHtml, gear:gearHtml};
+  const tabLabels = {overview:'Overview', skills:'Skill Tree', gear:'Gear'};
   return `
     <div class="detail-panel" id="detail-${b.id}">
       <div class="dp-header">
@@ -1810,10 +2745,10 @@ function renderDetail(b) {
         </div>
       </div>
       <div class="dp-tabs" id="tabs-${b.id}">
-        ${tabs.map((t,i)=>`<button class="dp-tab${i===0?' active':''}" onclick="switchDpTab(this,'${b.id}','${t}')">${t.charAt(0).toUpperCase()+t.slice(1)}</button>`).join('')}
+        ${TABS.map((t,i)=>`<button class="dp-tab${i===0?' active':''}" onclick="switchDpTab(this,'${b.id}','${t}')">${tabLabels[t]}</button>`).join('')}
       </div>
       <div class="dp-body">
-        ${tabs.map((t,i)=>`<div class="tab-pane${i===0?' active':''}" id="pane-${b.id}-${t}">${panelMap[t]}</div>`).join('')}
+        ${TABS.map((t,i)=>`<div class="tab-pane${i===0?' active':''}" id="pane-${b.id}-${t}">${panelMap[t]}</div>`).join('')}
       </div>
     </div>`;
 }
@@ -1821,16 +2756,11 @@ function renderDetail(b) {
 function switchDpTab(btn, buildId, tab) {
   document.querySelectorAll(`#tabs-${buildId} .dp-tab`).forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
-  ['overview','skills','gear','stats','variants'].forEach(p => {
+  ['overview','skills','gear'].forEach(p => {
     const el = document.getElementById(`pane-${buildId}-${p}`);
     if (el) el.classList.toggle('active', p === tab);
   });
 }
-
-// Build tag filter row
-document.getElementById('tag-row').innerHTML = ALL_TAGS.map(t =>
-  `<button class="tag-filter" data-tag="${t}" onclick="toggleTag('${t}')">${t}</button>`
-).join('');
 
 applyFilters();
 </script>
