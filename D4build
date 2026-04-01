@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D4 Build Vault</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0806;
+  --bg2: #110e0b;
+  --bg3: #1a1510;
+  --bg4: #221c14;
+  --surface: #1e1812;
+  --surface2: #261f16;
+  --gold: #c9952a;
+  --gold2: #e8b94a;
+  --gold3: #f5d278;
+  --gold-dim: #7a5a18;
+  --red: #8b2020;
+  --red2: #c43030;
+  --amber: #d4700a;
+  --text: #e8dcc8;
+  --text2: #a89878;
+  --text3: #6a5840;
+  --border: rgba(201,149,42,0.18);
+  --border2: rgba(201,149,42,0.35);
+  --glow: rgba(201,149,42,0.08);
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Crimson Pro', Georgia, serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 40% at 50% 0%, rgba(201,149,42,0.06) 0%, transparent 70%),
+    repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(201,149,42,0.015) 40px, rgba(201,149,42,0.015) 41px),
+    repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(201,149,42,0.015) 40px, rgba(201,149,42,0.015) 41px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 24px 80px; }
+
+/* ── HEADER ── */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0 28px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.logo-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--gold2);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1;
+  position: relative;
+}
+
+.logo-title span { color: var(--red2); }
+
+.logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text3);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.header-stats {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.stat-pill {
+  text-align: right;
+}
+
+.stat-pill-num {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--gold2);
+  line-height: 1;
+}
+
+.stat-pill-label {
+  font-size: 0.7rem;
+  color: var(--text3);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ── SUBMIT SECTION ── */
+.submit-section {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--gold-dim);
+  border-radius: 2px;
+  padding: 28px 32px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.4;
+}
+
+.submit-title {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 16px;
+}
+
+.submit-row {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.url-input {
+  flex: 1;
+  min-width: 260px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.url-input::placeholder { color: var(--text3); font-style: italic; }
+.url-input:focus { border-color: var(--gold-dim); }
+
+.btn-submit {
+  background: var(--gold);
+  color: var(--bg);
+  border: none;
+  border-radius: 2px;
+  padding: 12px 28px;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-submit:hover { background: var(--gold2); }
+.btn-submit:active { transform: scale(0.98); }
+.btn-submit:disabled { background: var(--bg4); color: var(--text3); cursor: not-allowed; }
+
+.hint { font-size: 0.8rem; color: var(--text3); margin-top: 10px; font-style: italic; }
+
+.status-bar {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 2px;
+  font-size: 0.875rem;
+  display: none;
+  border-left: 3px solid;
+}
+
+.status-loading { background: rgba(201,149,42,0.08); border-color: var(--gold-dim); color: var(--gold3); display: flex; align-items: center; gap: 10px; }
+.status-error { background: rgba(139,32,32,0.15); border-color: var(--red2); color: #e87070; }
+
+.spinner {
+  width: 14px; height: 14px;
+  border: 2px solid var(--gold-dim);
+  border-top-color: var(--gold2);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── TOOLBAR ── */
+.toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text3);
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 9px 12px 9px 34px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input::placeholder { color: var(--text3); }
+.search-input:focus { border-color: var(--gold-dim); }
+
+.filter-select {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 9px 12px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text2);
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  padding-right: 28px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236a5840'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+.filter-select:focus { border-color: var(--gold-dim); }
+
+.toolbar-count {
+  font-size: 0.8rem;
+  color: var(--text3);
+  white-space: nowrap;
+  font-style: italic;
+  margin-left: auto;
+}
+
+/* ── BUILD LIST ── */
+.builds-grid { display: flex; flex-direction: column; gap: 0; }
+
+.empty-state {
+  text-align: center;
+  padding: 64px 24px;
+  border: 1px dashed var(--border);
+  border-radius: 2px;
+  color: var(--text3);
+}
+
+.empty-icon {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--gold-dim);
+  margin-bottom: 12px;
+  letter-spacing: 0.1em;
+}
+
+.empty-text { font-size: 0.9rem; }
+
+/* ── BUILD CARD ── */
+.build-entry {
+  border-bottom: 1px solid var(--border);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+.build-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-radius: 2px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.build-row:hover { background: var(--glow); }
+.build-entry.open .build-row { background: var(--glow); }
+
+.build-class-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--gold2);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.build-info { flex: 1; min-width: 0; }
+
+.build-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.build-meta {
+  font-size: 0.8rem;
+  color: var(--text3);
+  margin-top: 2px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.build-meta span::before { content: '·'; margin-right: 10px; }
+.build-meta span:first-child::before { display: none; }
+
+.build-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tag {
+  font-size: 0.68rem;
+  padding: 2px 8px;
+  border-radius: 1px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.tag-speed { background: rgba(100,180,100,0.12); color: #7db87d; border: 1px solid rgba(100,180,100,0.2); }
+.tag-aoe { background: rgba(201,149,42,0.12); color: var(--gold2); border: 1px solid var(--border); }
+.tag-boss { background: rgba(139,32,32,0.18); color: #e07070; border: 1px solid rgba(139,32,32,0.3); }
+.tag-tank { background: rgba(60,120,200,0.12); color: #7aaee0; border: 1px solid rgba(60,120,200,0.2); }
+.tag-default { background: rgba(106,88,64,0.18); color: var(--text2); border: 1px solid var(--border); }
+
+.build-ratings {
+  display: flex;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.rating-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.rating-val {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--gold2);
+  line-height: 1;
+}
+
+.rating-key {
+  font-size: 0.62rem;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.build-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.btn-icon {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text3);
+  font-size: 0.8rem;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.btn-icon:hover { border-color: var(--border2); color: var(--text); }
+.btn-icon.delete:hover { border-color: var(--red2); color: var(--red2); }
+
+.chevron {
+  width: 12px;
+  height: 12px;
+  border-right: 1.5px solid var(--text3);
+  border-bottom: 1.5px solid var(--text3);
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+  margin-right: 4px;
+}
+
+.build-entry.open .chevron { transform: rotate(-135deg); }
+
+/* ── DETAIL PANEL ── */
+.detail-panel {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--gold-dim);
+  margin: 0 0 8px;
+  overflow: hidden;
+  display: none;
+  animation: slideDown 0.25s ease;
+}
+
+@keyframes slideDown { from { opacity: 0; max-height: 0; } to { opacity: 1; max-height: 2000px; } }
+.build-entry.open .detail-panel { display: block; }
+
+.detail-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg3);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.detail-tab {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 13px 20px;
+  color: var(--text3);
+  cursor: pointer;
+  border: none;
+  background: none;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s;
+}
+
+.detail-tab:hover { color: var(--text2); }
+.detail-tab.active { color: var(--gold2); border-bottom-color: var(--gold); }
+
+.tab-content { padding: 28px 32px; display: none; }
+.tab-content.active { display: block; }
+
+/* ── OVERVIEW TAB ── */
+.overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+
+.ov-section-title {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.ratings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.rating-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 12px 14px;
+}
+
+.rc-label { font-size: 0.72rem; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+.rc-val { font-family: var(--font-display); font-size: 1.4rem; color: var(--gold2); line-height: 1; }
+.rc-sub { font-size: 0.72rem; color: var(--text3); margin-top: 3px; font-style: italic; }
+
+.playstyle-text {
+  font-size: 0.95rem;
+  color: var(--text2);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.loop-list { list-style: none; }
+
+.loop-item {
+  display: flex;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.loop-item:last-child { border-bottom: none; }
+
+.loop-num {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--gold);
+  min-width: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.loop-title { font-weight: 600; color: var(--text); }
+.loop-desc { color: var(--text2); margin-top: 2px; font-size: 0.875rem; }
+
+/* ── SKILLS TAB ── */
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.skill-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 14px 16px;
+  transition: border-color 0.15s;
+}
+
+.skill-card:hover { border-color: var(--border2); }
+
+.skill-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 6px; }
+.skill-name { font-family: var(--font-display); font-size: 0.85rem; color: var(--text); letter-spacing: 0.04em; }
+.skill-role {
+  font-size: 0.62rem;
+  padding: 2px 7px;
+  border-radius: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(--font-display);
+  flex-shrink: 0;
+}
+.role-Core { background: rgba(139,32,32,0.2); color: #e07070; border: 1px solid rgba(139,32,32,0.3); }
+.role-Buff { background: rgba(100,180,100,0.12); color: #7db87d; border: 1px solid rgba(100,180,100,0.2); }
+.role-Utility { background: rgba(201,149,42,0.12); color: var(--gold2); border: 1px solid var(--border); }
+.role-Damage { background: rgba(180,100,30,0.15); color: #d4883a; border: 1px solid rgba(180,100,30,0.25); }
+
+.skill-desc { font-size: 0.85rem; color: var(--text2); line-height: 1.5; }
+
+.mechanics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
+
+.mechanic-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  padding: 12px 14px;
+  border-radius: 2px;
+}
+
+.mechanic-title { font-family: var(--font-display); font-size: 0.78rem; color: var(--gold2); margin-bottom: 6px; letter-spacing: 0.04em; }
+.mechanic-desc { font-size: 0.8rem; color: var(--text2); line-height: 1.5; }
+
+/* ── GEAR TAB ── */
+.gear-table { width: 100%; border-collapse: collapse; }
+
+.gear-table th {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text3);
+  padding: 0 12px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.gear-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+  vertical-align: top;
+}
+
+.gear-table tr:last-child td { border-bottom: none; }
+.gear-table tr:hover td { background: var(--glow); }
+
+.slot-label { color: var(--text3); font-size: 0.8rem; font-style: italic; }
+.item-name-cell { color: var(--text); font-weight: 600; }
+.item-note-cell { color: var(--text2); }
+
+.rarity-badge {
+  font-size: 0.6rem;
+  padding: 1px 7px;
+  border-radius: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: var(--font-display);
+  white-space: nowrap;
+}
+
+.rarity-Unique { background: rgba(201,149,42,0.15); color: var(--gold2); border: 1px solid var(--border); }
+.rarity-Mythic { background: rgba(120,60,180,0.2); color: #b07ee0; border: 1px solid rgba(120,60,180,0.3); }
+.rarity-Legendary { background: rgba(180,100,30,0.15); color: #d4883a; border: 1px solid rgba(180,100,30,0.25); }
+
+/* ── STATS TAB ── */
+.stats-rotation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+.stat-row { margin-bottom: 14px; }
+.stat-header { display: flex; justify-content: space-between; font-size: 0.875rem; margin-bottom: 5px; }
+.stat-name { color: var(--text2); }
+.stat-prio { font-weight: 600; font-size: 0.8rem; }
+.prio-Critical { color: #e07070; }
+.prio-Very-High { color: var(--gold2); }
+.prio-High { color: #7db87d; }
+.prio-Medium { color: var(--text2); }
+.prio-Low { color: var(--text3); }
+
+.stat-bar-bg { background: var(--bg4); border-radius: 1px; height: 4px; }
+.stat-bar-fill { height: 4px; border-radius: 1px; transition: width 0.6s ease; }
+
+.rotation-list { list-style: none; }
+.rotation-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
+.rotation-item:last-child { border-bottom: none; }
+.rotation-num { font-family: var(--font-display); color: var(--gold-dim); min-width: 18px; flex-shrink: 0; }
+
+/* ── SHARE TAB ── */
+.share-section { max-width: 500px; }
+.share-label { font-size: 0.8rem; color: var(--text3); margin-bottom: 8px; letter-spacing: 0.08em; text-transform: uppercase; font-family: var(--font-display); }
+.share-url-row { display: flex; gap: 8px; margin-bottom: 20px; }
+.share-url-input {
+  flex: 1;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 9px 12px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text2);
+  outline: none;
+}
+
+.btn-copy {
+  background: none;
+  border: 1px solid var(--border2);
+  border-radius: 2px;
+  padding: 9px 18px;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold2);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.btn-copy:hover { background: var(--glow); }
+
+.btn-export {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 9px 18px;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text2);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+  display: block;
+  margin-top: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.btn-export:hover { background: var(--glow); color: var(--text); }
+
+.share-meta { font-size: 0.8rem; color: var(--text3); font-style: italic; margin-top: 20px; }
+.copied-msg { font-size: 0.8rem; color: #7db87d; margin-top: 8px; display: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .overview-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .mechanics-grid { grid-template-columns: 1fr 1fr; }
+  .stats-rotation-grid { grid-template-columns: 1fr; }
+  .build-ratings { display: none; }
+  .header-stats { display: none; }
+  .tab-content { padding: 20px 16px; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header>
+    <div class="logo">
+      <div class="logo-title">D4 Build <span>Vault</span></div>
+      <div class="logo-sub">Diablo IV · Season 12 · Slaughter</div>
+    </div>
+    <div class="header-stats">
+      <div class="stat-pill">
+        <div class="stat-pill-num" id="hdr-count">0</div>
+        <div class="stat-pill-label">Builds saved</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-pill-num" id="hdr-classes">0</div>
+        <div class="stat-pill-label">Classes</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="submit-section">
+    <div class="submit-title">Add a build</div>
+    <div class="submit-row">
+      <input class="url-input" id="url-input" type="url" placeholder="Paste a Maxroll.gg or Icy-Veins.com build guide URL…" autocomplete="off">
+      <button class="btn-submit" id="submit-btn" onclick="submitBuild()">Analyze</button>
+    </div>
+    <div class="hint">Supports maxroll.gg/d4 and icy-veins.com/d4 build guides</div>
+    <div class="status-bar" id="status-bar"></div>
+  </section>
+
+  <div class="toolbar">
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input class="search-input" id="search-input" type="search" placeholder="Search builds, classes, tags…" oninput="renderBuilds()">
+    </div>
+    <select class="filter-select" id="class-filter" onchange="renderBuilds()">
+      <option value="">All classes</option>
+    </select>
+    <select class="filter-select" id="sort-select" onchange="renderBuilds()">
+      <option value="newest">Newest first</option>
+      <option value="name">Name A–Z</option>
+      <option value="class">By class</option>
+    </select>
+    <div class="toolbar-count" id="toolbar-count"></div>
+  </div>
+
+  <div class="builds-grid" id="builds-list"></div>
+
+</div>
+
+<script>
+const STORAGE_KEY = 'd4vault_v2';
+let builds = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+let openBuildId = null;
+let openTabs = {};
+
+function saveBuilds() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(builds));
+}
+
+function setStatus(msg, type) {
+  const el = document.getElementById('status-bar');
+  if (!msg) { el.style.display = 'none'; return; }
+  el.className = 'status-bar ' + type;
+  el.style.display = 'flex';
+  if (type === 'status-loading') {
+    el.innerHTML = '<div class="spinner"></div><span>' + msg + '</span>';
+  } else {
+    el.innerHTML = msg;
+  }
+}
+
+function detectSource(url) {
+  if (url.includes('maxroll.gg')) return 'Maxroll';
+  if (url.includes('icy-veins.com')) return 'Icy Veins';
+  return null;
+}
+
+async function submitBuild() {
+  const url = document.getElementById('url-input').value.trim();
+  if (!url) return;
+  const source = detectSource(url);
+  if (!source) { setStatus('Please enter a Maxroll.gg or Icy-Veins.com D4 build URL.', 'status-error'); return; }
+
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  setStatus('Analyzing build guide — generating dashboard…', 'status-loading');
+
+  const prompt = `You are a Diablo 4 Season 12 build analyst. The user submitted this build URL: ${url}
+
+Using your knowledge of D4 S12 builds, generate an accurate JSON summary. Return ONLY raw JSON, no markdown, no backticks.
+
+{
+  "name": "Build name",
+  "class": "Class name",
+  "season": "S12",
+  "source": "${source}",
+  "url": "${url}",
+  "playstyle": "2-3 sentences describing how it plays",
+  "tags": ["tag1","tag2","tag3"],
+  "ratings": {"speed": "4/5", "aoe": "5/5", "boss": "3/5", "defense": "4/5"},
+  "coreLoop": [
+    {"step":1,"title":"Short title","desc":"What you do"},
+    {"step":2,"title":"Short title","desc":"What you do"},
+    {"step":3,"title":"Short title","desc":"What you do"},
+    {"step":4,"title":"Short title","desc":"What you do"}
+  ],
+  "skills": [
+    {"name":"Skill","role":"Core","desc":"What it does"},
+    {"name":"Skill","role":"Buff","desc":"What it does"},
+    {"name":"Skill","role":"Damage","desc":"What it does"},
+    {"name":"Skill","role":"Utility","desc":"What it does"}
+  ],
+  "mechanics": [
+    {"title":"Mechanic","desc":"Explanation"},
+    {"title":"Mechanic","desc":"Explanation"},
+    {"title":"Mechanic","desc":"Explanation"}
+  ],
+  "keyGear": [
+    {"slot":"Helm","name":"Item","note":"Why important","rarity":"Unique"},
+    {"slot":"Ring","name":"Item","note":"Why important","rarity":"Unique"},
+    {"slot":"Weapon","name":"Item","note":"Why important","rarity":"Legendary"},
+    {"slot":"Aspect","name":"Aspect name","note":"What it does","rarity":"Legendary"}
+  ],
+  "statPriorities": [
+    {"stat":"Stat name","priority":"Critical"},
+    {"stat":"Stat name","priority":"Very High"},
+    {"stat":"Stat name","priority":"High"},
+    {"stat":"Stat name","priority":"Medium"},
+    {"stat":"Stat name","priority":"Low"}
+  ],
+  "rotation": [
+    "Step 1 instruction",
+    "Step 2 instruction",
+    "Step 3 instruction",
+    "Step 4 instruction"
+  ]
+}`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1200,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await res.json();
+    const raw = data.content.map(c => c.text || '').join('');
+    const clean = raw.replace(/```json|```/g, '').trim();
+    const build = JSON.parse(clean);
+    build.id = Date.now().toString();
+    build.addedAt = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    builds.unshift(build);
+    saveBuilds();
+    document.getElementById('url-input').value = '';
+    setStatus('', '');
+    openBuildId = build.id;
+    openTabs[build.id] = 'overview';
+    renderBuilds();
+    updateHeader();
+  } catch(e) {
+    setStatus('Could not parse this build. Ensure it is a valid D4 guide URL from Maxroll or Icy Veins.', 'status-error');
+  }
+  btn.disabled = false;
+}
+
+document.getElementById('url-input').addEventListener('keydown', e => { if (e.key === 'Enter') submitBuild(); });
+
+function getClassAbbr(cls) {
+  if (!cls) return '??';
+  const map = { Barbarian:'BAR', Druid:'DRU', Necromancer:'NEC', Rogue:'ROG', Sorcerer:'SOR', Sorceress:'SOR', Spiritborn:'SBN', Paladin:'PAL' };
+  return map[cls] || cls.slice(0,3).toUpperCase();
+}
+
+function tagClass(tag) {
+  const t = tag.toLowerCase();
+  if (t.includes('speed') || t.includes('fast')) return 'tag-speed';
+  if (t.includes('aoe') || t.includes('clear')) return 'tag-aoe';
+  if (t.includes('boss') || t.includes('push')) return 'tag-boss';
+  if (t.includes('tank') || t.includes('block') || t.includes('def')) return 'tag-tank';
+  return 'tag-default';
+}
+
+function prioBarColor(p) {
+  const map = { Critical:'#c43030', 'Very High':'#c9952a', High:'#639922', Medium:'#888780', Low:'#444441' };
+  return map[p] || '#888780';
+}
+
+function prioBarWidth(p) {
+  const map = { Critical:100, 'Very High':82, High:65, Medium:46, Low:28 };
+  return map[p] || 46;
+}
+
+function getFiltered() {
+  const q = (document.getElementById('search-input').value || '').toLowerCase();
+  const cls = document.getElementById('class-filter').value;
+  const sort = document.getElementById('sort-select').value;
+  let result = builds.filter(b => {
+    const matchQ = !q || b.name?.toLowerCase().includes(q) || b.class?.toLowerCase().includes(q) || (b.tags||[]).some(t => t.toLowerCase().includes(q));
+    const matchCls = !cls || b.class === cls;
+    return matchQ && matchCls;
+  });
+  if (sort === 'name') result.sort((a,b) => (a.name||'').localeCompare(b.name||''));
+  else if (sort === 'class') result.sort((a,b) => (a.class||'').localeCompare(b.class||''));
+  return result;
+}
+
+function updateHeader() {
+  document.getElementById('hdr-count').textContent = builds.length;
+  const classes = [...new Set(builds.map(b => b.class).filter(Boolean))];
+  document.getElementById('hdr-classes').textContent = classes.length;
+  const sel = document.getElementById('class-filter');
+  const cur = sel.value;
+  sel.innerHTML = '<option value="">All classes</option>' + classes.map(c => `<option value="${c}"${c===cur?' selected':''}>${c}</option>`).join('');
+}
+
+function deleteBuild(id, e) {
+  e.stopPropagation();
+  if (!confirm('Remove this build?')) return;
+  builds = builds.filter(b => b.id !== id);
+  if (openBuildId === id) openBuildId = null;
+  saveBuilds();
+  renderBuilds();
+  updateHeader();
+}
+
+function toggleBuild(id) {
+  openBuildId = openBuildId === id ? null : id;
+  if (openBuildId && !openTabs[id]) openTabs[id] = 'overview';
+  renderBuilds();
+}
+
+function switchTab(id, tab) {
+  openTabs[id] = tab;
+  renderBuilds();
+}
+
+function copyLink(url, btnId) {
+  navigator.clipboard.writeText(url).then(() => {
+    const el = document.getElementById(btnId);
+    if (el) { const orig = el.textContent; el.textContent = 'Copied!'; setTimeout(()=>{ el.textContent = orig; }, 2000); }
+  });
+}
+
+function exportBuild(b) {
+  const json = JSON.stringify(b, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = (b.name || 'build').replace(/\s+/g,'-').toLowerCase() + '.json';
+  a.click();
+}
+
+function renderDetail(b) {
+  const tab = openTabs[b.id] || 'overview';
+  const tabs = [
+    { key:'overview', label:'Overview' },
+    { key:'skills', label:'Skills' },
+    { key:'gear', label:'Gear' },
+    { key:'stats', label:'Stats' },
+    { key:'share', label:'Share' }
+  ];
+
+  const tabsHtml = tabs.map(t =>
+    `<button class="detail-tab${tab===t.key?' active':''}" onclick="switchTab('${b.id}','${t.key}');event.stopPropagation()">${t.label}</button>`
+  ).join('');
+
+  const ratings = b.ratings || {};
+  const ratingLabels = { speed:'Speed', aoe:'AoE', boss:'Boss', defense:'Defense' };
+
+  const overviewHtml = `
+    <div class="overview-grid">
+      <div>
+        <div class="ov-section-title">Performance</div>
+        <div class="ratings-grid">
+          ${Object.entries(ratingLabels).map(([k,lbl]) => `
+            <div class="rating-card">
+              <div class="rc-label">${lbl}</div>
+              <div class="rc-val">${ratings[k] || '?'}</div>
+            </div>
+          `).join('')}
+        </div>
+        <div style="margin-top:20px;">
+          <div class="ov-section-title">Playstyle</div>
+          <div class="playstyle-text">${b.playstyle || ''}</div>
+        </div>
+      </div>
+      <div>
+        <div class="ov-section-title">Core loop</div>
+        <ul class="loop-list">
+          ${(b.coreLoop||[]).map(s => `
+            <li class="loop-item">
+              <span class="loop-num">${s.step}</span>
+              <div><div class="loop-title">${s.title}</div><div class="loop-desc">${s.desc}</div></div>
+            </li>`).join('')}
+        </ul>
+      </div>
+    </div>`;
+
+  const skillsHtml = `
+    <div class="skills-grid">
+      ${(b.skills||[]).map(s => `
+        <div class="skill-card">
+          <div class="skill-top">
+            <div class="skill-name">${s.name}</div>
+            <span class="skill-role role-${s.role||'Utility'}">${s.role||''}</span>
+          </div>
+          <div class="skill-desc">${s.desc}</div>
+        </div>`).join('')}
+    </div>
+    ${(b.mechanics||[]).length ? `
+      <div class="ov-section-title" style="margin-top:24px;">Key mechanics</div>
+      <div class="mechanics-grid">
+        ${b.mechanics.map(m => `
+          <div class="mechanic-card">
+            <div class="mechanic-title">${m.title}</div>
+            <div class="mechanic-desc">${m.desc}</div>
+          </div>`).join('')}
+      </div>` : ''}`;
+
+  const gearHtml = `
+    <table class="gear-table">
+      <thead><tr><th>Slot</th><th>Item</th><th>Rarity</th><th>Why it matters</th></tr></thead>
+      <tbody>
+        ${(b.keyGear||[]).map(g => `
+          <tr>
+            <td class="slot-label">${g.slot||''}</td>
+            <td class="item-name-cell">${g.name||''}</td>
+            <td><span class="rarity-badge rarity-${g.rarity||'Legendary'}">${g.rarity||''}</span></td>
+            <td class="item-note-cell">${g.note||''}</td>
+          </tr>`).join('')}
+      </tbody>
+    </table>`;
+
+  const statsHtml = `
+    <div class="stats-rotation-grid">
+      <div>
+        <div class="ov-section-title">Stat priorities</div>
+        ${(b.statPriorities||[]).map(s => {
+          const key = (s.priority||'').replace(/\s+/g,'-');
+          return `<div class="stat-row">
+            <div class="stat-header">
+              <span class="stat-name">${s.stat}</span>
+              <span class="stat-prio prio-${key}">${s.priority}</span>
+            </div>
+            <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:${prioBarWidth(s.priority)}%;background:${prioBarColor(s.priority)};"></div></div>
+          </div>`;
+        }).join('')}
+      </div>
+      <div>
+        <div class="ov-section-title">Rotation</div>
+        <ul class="rotation-list">
+          ${(b.rotation||[]).map((r,i) => `
+            <li class="rotation-item">
+              <span class="rotation-num">${i+1}</span>
+              <span style="color:var(--text2)">${r}</span>
+            </li>`).join('')}
+        </ul>
+      </div>
+    </div>`;
+
+  const copyBtnId = 'copy-' + b.id;
+  const shareHtml = `
+    <div class="share-section">
+      <div class="share-label">Original guide</div>
+      <div class="share-url-row">
+        <input class="share-url-input" value="${b.url||''}" readonly>
+        <button class="btn-copy" id="${copyBtnId}" onclick="copyLink('${(b.url||'').replace(/'/g,"\\'")}','${copyBtnId}');event.stopPropagation()">Copy link</button>
+      </div>
+      <button class="btn-export" onclick="exportBuild(builds.find(x=>x.id==='${b.id}'));event.stopPropagation()">Export as JSON</button>
+      <div class="share-meta">Added ${b.addedAt||''} · Source: ${b.source||''} · Season ${b.season||'S12'}</div>
+    </div>`;
+
+  const panels = { overview: overviewHtml, skills: skillsHtml, gear: gearHtml, stats: statsHtml, share: shareHtml };
+
+  return `
+    <div class="detail-panel" onclick="event.stopPropagation()">
+      <div class="detail-tabs">${tabsHtml}</div>
+      ${tabs.map(t => `<div class="tab-content${tab===t.key?' active':''}">${panels[t.key]||''}</div>`).join('')}
+    </div>`;
+}
+
+function renderBuilds() {
+  const filtered = getFiltered();
+  const count = document.getElementById('toolbar-count');
+  count.textContent = filtered.length + ' of ' + builds.length + ' build' + (builds.length !== 1 ? 's' : '');
+
+  const list = document.getElementById('builds-list');
+  if (!filtered.length) {
+    list.innerHTML = `<div class="empty-state"><div class="empty-icon">⚔</div><div class="empty-text">${builds.length ? 'No builds match your search.' : 'No builds yet — paste a guide URL above to get started.'}</div></div>`;
+    return;
+  }
+
+  list.innerHTML = filtered.map(b => {
+    const isOpen = openBuildId === b.id;
+    const tags = (b.tags||[]).slice(0,3);
+    const ratings = b.ratings||{};
+    return `
+      <div class="build-entry${isOpen?' open':''}" id="entry-${b.id}">
+        <div class="build-row" onclick="toggleBuild('${b.id}')">
+          <div class="build-class-icon">${getClassAbbr(b.class)}</div>
+          <div class="build-info">
+            <div class="build-name">${b.name||'Unnamed build'}</div>
+            <div class="build-meta">
+              <span>${b.class||'Unknown'}</span>
+              <span>${b.season||'S12'}</span>
+              <span>${b.source||''}</span>
+              <span>${b.addedAt||''}</span>
+            </div>
+            <div class="build-tags" style="margin-top:6px;">
+              ${tags.map(t => `<span class="tag ${tagClass(t)}">${t}</span>`).join('')}
+            </div>
+          </div>
+          <div class="build-ratings">
+            ${['speed','aoe','boss','defense'].map(k => `
+              <div class="rating-pill">
+                <div class="rating-val">${ratings[k]||'?'}</div>
+                <div class="rating-key">${k}</div>
+              </div>`).join('')}
+          </div>
+          <div class="build-actions" onclick="event.stopPropagation()">
+            <button class="btn-icon delete" onclick="deleteBuild('${b.id}',event)" title="Remove build">✕</button>
+          </div>
+          <div class="chevron"></div>
+        </div>
+        ${isOpen ? renderDetail(b) : ''}
+      </div>`;
+  }).join('');
+}
+
+updateHeader();
+renderBuilds();
+</script>
+</body>
+</html>
